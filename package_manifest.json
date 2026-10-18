@@ -6,8 +6,7 @@
     ".gitattributes": "bdcbd37dd1fdef8e11828ecbf42ec3ec77c4789f40446f388a28cd1e2654fc67",
     ".gitignore": "5cb0ef8c06db83afc2cd847698b645d016c36609885bd0f23c15fe74d01366ae",
     "CITATION.cff": "8fd237d185bec6348bf08faf1423e3d7a17f5ffd7e9d550d9bf0e72cfd06ca7d",
-    "README.md": "ae5f61b7b4c9d719a1336b2f6461e8f9ba55d5fffa9166084c0a80e330ad7708",
-    "README_zh.md": "6676a48add819e82deb8d5da1a74ba9806e92a49fb062515e4bf4e9bea65abdf",
+    "README.md": "8f52c8309a47f93c4a06c7b0de59bde26d6dcd371410023b316ff05f105fe5b5",
     "auxiliary/mot20/README.md": "1a286efb397f5eec3157e566f652f49b793dbbc79f48742eac77e312795d5d31",
     "auxiliary/mot20/data/calibration.json": "6d879357d6eb82e727c636ec9124c19bd757e889ab044dc4678a644e328baf10",
     "auxiliary/mot20/data/expected_failures.json": "3fb6851122fa61d67f10d9887e267d4099543ecdecafd3940e8f05c4ec8b30e3",
@@ -86,7 +85,7 @@
     "package.json": "2ed24ee5313d4332fc9d887002ad418fb3ff3799ed0a764224c14d4b7de3fd35",
     "phase_timing.py": "542f61917988f7e1417189e231c6320f7522f10437d3b7180f01763dd15128f5",
     "prepare.py": "5f9d5ca6db3b2d99418e3bf93541936cc382cb7c87ac8776f98bab553123bbee",
-    "quickstart.ipynb": "9f320c6157c36ede703ddb9dcb15ba3c2d1c374a6f04384cffba661e42d0c329",
+    "quickstart.ipynb": "7c985c9bbb5b9f9935f4fe0df5ce5c6b5915d882225c4cad58c835df2ef18404",
     "reference/bottleneck/paired_effects.csv": "582f9dae0129f636229ffc963e81b8a207e6786ad079b2242a17a381fabe1965",
     "reference/bottleneck/summary.csv": "3079388e1c38582e2dc3e8812776f8fd9348fd54a50895facf8a0f6fd3f0155d",
     "reference/release_verification.json": "aeea24a0a6999a0e87c3db39db1108a6e91007924680e52cd8d07a12176fb7ce",
@@ -138,5 +137,5 @@
     "tests/test_rendering.py": "3299b9d2c8ff1b3dfe77de12e668cb5c4be90c129ddc34c37694460ee7ce029a",
     "verify_package.py": "0e06c5f11cfa570434580850acc314e45466fff24dc48f19fd774b117995cccf"
   },
-  "documentation_updated_utc": "2026-10-18T22:45:17.903611+00:00"
+  "documentation_updated_utc": "2026-10-18T22:48:02.682770+00:00"
 }

@@ -2,7 +2,7 @@
 
 Simulate people moving through stadium tunnel areas, using tracked video to supply the initial crowd and later arrivals.
 
-Code for **Video-Driven Agent-Based Simulation of Stadium Egress**, by Ao He and Vivian W. H. Wong. [中文说明](README_zh.md)
+Code for **Video-Driven Agent-Based Simulation of Stadium Egress**, by Ao He and Vivian W. H. Wong.
 
 ## What the model does
 

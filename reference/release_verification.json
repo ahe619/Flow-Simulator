@@ -1,0 +1,279 @@
+{
+  "checked_utc": "2026-10-17T00:19:46.352458+00:00",
+  "tests": {
+    "node_core_and_config": 60,
+    "python": 25,
+    "mot20": 5,
+    "total": 90,
+    "all_passed": true
+  },
+  "original_source_files_checked": 31,
+  "original_source_files_changed": 0,
+  "core_engine_sha256": {
+    "engine.js": "1ace44ca29815c9ff4be2c22aed6bc25b62fd972ad89b3d8e7065fec56dd0d62",
+    "stage1-engine.js": "e13295bf9b095b1b352305ea8210d774bb7af43b2b31b78b40b5376152250b70",
+    "pressure-field.js": "3c28c6cf740676ad674c519a683fd863c566fbb579fbae12cde25ab28972b7f8",
+    "stadium-macro-engine.js": "e0d0c77557038150cbda809fab01364f66ccf5f904eb6116d9aac1aa80486da7"
+  },
+  "prepared_input_comparison": [
+    {
+      "tunnel": "A",
+      "different_scientific_fields": [],
+      "rho0": 7.939702329308018
+    },
+    {
+      "tunnel": "B",
+      "different_scientific_fields": [],
+      "rho0": 13.621757884562681
+    },
+    {
+      "tunnel": "C",
+      "different_scientific_fields": [],
+      "rho0": 10.51086834326445
+    },
+    {
+      "tunnel": "D",
+      "different_scientific_fields": [],
+      "rho0": 10.299273682471114
+    },
+    {
+      "tunnel": "E",
+      "different_scientific_fields": [],
+      "rho0": 11.451596483327348
+    },
+    {
+      "tunnel": "F",
+      "different_scientific_fields": [],
+      "rho0": 18.019623990072894
+    }
+  ],
+  "continuous_reruns": {
+    "tunnel": "E",
+    "seed": 1,
+    "comparisons": [
+      {
+        "method": "feedback_off",
+        "matched_fields": 18,
+        "different_scientific_fields": [],
+        "roi_rmse": 32.01223724348758,
+        "elapsed_seconds": 547.1202887
+      },
+      {
+        "method": "feedback_on",
+        "matched_fields": 18,
+        "different_scientific_fields": [],
+        "roi_rmse": 28.31386586109357,
+        "elapsed_seconds": 512.2269821
+      }
+    ],
+    "comparison_excludes": [
+      "runtime",
+      "provenance"
+    ],
+    "all_120_runs_rerun": false
+  },
+  "bottleneck_reruns": {
+    "inflow": 6,
+    "seed": 1,
+    "comparisons": [
+      {
+        "method": "feedback_off",
+        "different_fields": [],
+        "original_keys": [
+          "caseId",
+          "arrivalRate",
+          "seed",
+          "method",
+          "config",
+          "elapsedSeconds",
+          "scene",
+          "regions",
+          "checks",
+          "implementationGatePassed",
+          "drainTimeSeconds",
+          "censored",
+          "censorTimeSeconds",
+          "diagnostics",
+          "requestedDemand",
+          "states",
+          "terminalState",
+          "timeseries",
+          "exitEvents",
+          "mouthCrossings",
+          "throughputDensity",
+          "fdPoints",
+          "measurementMetadata",
+          "parentDemandIdentityPassed"
+        ],
+        "new_extra_keys": [
+          "provenance"
+        ]
+      },
+      {
+        "method": "feedback_on",
+        "different_fields": [],
+        "original_keys": [
+          "caseId",
+          "arrivalRate",
+          "seed",
+          "method",
+          "config",
+          "elapsedSeconds",
+          "scene",
+          "regions",
+          "checks",
+          "implementationGatePassed",
+          "drainTimeSeconds",
+          "censored",
+          "censorTimeSeconds",
+          "diagnostics",
+          "requestedDemand",
+          "states",
+          "terminalState",
+          "timeseries",
+          "exitEvents",
+          "mouthCrossings",
+          "throughputDensity",
+          "fdPoints",
+          "measurementMetadata",
+          "parentDemandIdentityPassed"
+        ],
+        "new_extra_keys": [
+          "provenance"
+        ]
+      }
+    ],
+    "comparison_excludes": [
+      "runtime",
+      "provenance"
+    ]
+  },
+  "archived_full_study_postprocessing": {
+    "run_count": 120,
+    "tables": [
+      {
+        "table": "crossings_10s.csv",
+        "original_rows": 30240,
+        "new_rows": 30240,
+        "all_cells_exact": true,
+        "sample_differences": []
+      },
+      {
+        "table": "demand_coverage.csv",
+        "original_rows": 1764,
+        "new_rows": 1764,
+        "all_cells_exact": true,
+        "sample_differences": []
+      },
+      {
+        "table": "ensemble_summary.csv",
+        "original_rows": 2472,
+        "new_rows": 2472,
+        "all_cells_exact": true,
+        "sample_differences": []
+      },
+      {
+        "table": "native_timeseries.csv",
+        "original_rows": 310401,
+        "new_rows": 310401,
+        "all_cells_exact": true,
+        "sample_differences": []
+      },
+      {
+        "table": "paired_effects.csv",
+        "original_rows": 252,
+        "new_rows": 252,
+        "all_cells_exact": true,
+        "sample_differences": []
+      },
+      {
+        "table": "phase_summary.csv",
+        "original_rows": 720,
+        "new_rows": 720,
+        "all_cells_exact": true,
+        "sample_differences": []
+      },
+      {
+        "table": "run_summary.csv",
+        "original_rows": 120,
+        "new_rows": 120,
+        "all_cells_exact": true,
+        "sample_differences": []
+      },
+      {
+        "table": "timeseries_10s.csv",
+        "original_rows": 30240,
+        "new_rows": 30240,
+        "all_cells_exact": true,
+        "sample_differences": []
+      },
+      {
+        "table": "total_visible_roi_timeseries.csv",
+        "original_rows": 52017,
+        "new_rows": 52017,
+        "all_cells_exact": true,
+        "sample_differences": []
+      }
+    ],
+    "total_rows_compared": 428226
+  },
+  "mot20": {
+    "valid_windows": 4,
+    "methods_per_window": 4,
+    "exact_comparisons": 16,
+    "details": "auxiliary/mot20/reference/reproduction_check.json"
+  },
+  "relocation": {
+    "relocated_to_system_temp": true,
+    "path_contains_spaces": true,
+    "source_directory_used_at_runtime": false
+  },
+  "relocation_checks": [
+    {
+      "check": "python_tests",
+      "passed": true
+    },
+    {
+      "check": "engine_tests",
+      "passed": true
+    },
+    {
+      "check": "mot20_tests",
+      "passed": true
+    },
+    {
+      "check": "stadium_smoke",
+      "passed": true
+    },
+    {
+      "check": "resume",
+      "passed": true
+    },
+    {
+      "check": "verify",
+      "passed": true
+    },
+    {
+      "check": "mot20_complete",
+      "passed": true
+    },
+    {
+      "check": "phase_timing",
+      "passed": true
+    },
+    {
+      "check": "notebook_end_to_end",
+      "passed": true
+    }
+  ],
+  "followup_checks": [
+    "Single-condition S1 rendering without a paired table",
+    "Student interval for more than ten seed pairs"
+  ],
+  "rendering": {
+    "six_tunnel_timeseries": "visually_checked",
+    "overview_snapshot": "visually_checked",
+    "bottleneck_metrics": "visually_checked",
+    "overview_animation": "MP4 export checked"
+  }
+}

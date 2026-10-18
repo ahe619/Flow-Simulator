@@ -1,0 +1,546 @@
+{
+  "camera": "D",
+  "HimageToU": [
+    [
+      0.0017512717651053055,
+      -0.0009333072604136408,
+      -5.09733197039341
+    ],
+    [
+      0.0006530898821860129,
+      0.003667587303977346,
+      -5.973294026606588
+    ],
+    [
+      -3.736491415147538e-05,
+      0.0002626129577789203,
+      1.0
+    ]
+  ],
+  "HUToImage": [
+    [
+      654.6500767360883,
+      -50.67395195750832,
+      3034.2783510350278
+    ],
+    [
+      -53.747021070006,
+      195.13665487863685,
+      891.642206145003
+    ],
+    [
+      0.038575608091500936,
+      -0.05313884197337149,
+      0.879218753061843
+    ]
+  ],
+  "supportPolygonImage": [
+    [
+      1865.0,
+      1324.0
+    ],
+    [
+      2043.0,
+      2153.0
+    ],
+    [
+      3778.0,
+      1727.0
+    ],
+    [
+      3398.0,
+      1038.0
+    ]
+  ],
+  "domainImage": [
+    [
+      3147.8728795192214,
+      1068.1272929308384
+    ],
+    [
+      2390.191698396973,
+      1242.3297047184278
+    ],
+    [
+      3176.495361012069,
+      2162.7854976041226
+    ],
+    [
+      3889.775829560179,
+      2170.0337127506273
+    ],
+    [
+      3937.840225898508,
+      1019.9111029924809
+    ],
+    [
+      3741.3231576456155,
+      962.4511794257794
+    ]
+  ],
+  "mouthImage": [
+    [
+      3147.8728795192214,
+      1068.1272929308384
+    ],
+    [
+      3741.3231576456155,
+      962.4511794257794
+    ]
+  ],
+  "mouth": {
+    "p0": [
+      -0.5,
+      0
+    ],
+    "p1": [
+      0.5,
+      0
+    ],
+    "inboundSign": -1
+  },
+  "scene": {
+    "walls": [
+      {
+        "p0": [
+          -1.6742346153631364,
+          0.11647156779632045
+        ],
+        "p1": [
+          -0.5,
+          0
+        ],
+        "kind": "visible_facade_floor_contact",
+        "sourcePixelsSample535": [
+          [
+            782,
+            410.9
+          ],
+          [
+            1028,
+            351
+          ]
+        ]
+      }
+    ],
+    "domainPolygon": [
+      [
+        -0.5,
+        0
+      ],
+      [
+        -1.6742346153631364,
+        0.11647156779632045
+      ],
+      [
+        -1.0715405508352767,
+        2.7830583685896566
+      ],
+      [
+        -0.21802552379095752,
+        3.1770776490188872
+      ],
+      [
+        0.7557797451929059,
+        0.3025619166222173
+      ],
+      [
+        0.5,
+        0
+      ]
+    ],
+    "floorPolygon": [
+      [
+        -0.5,
+        0
+      ],
+      [
+        -1.6742346153631364,
+        0.11647156779632045
+      ],
+      [
+        -1.0715405508352767,
+        2.7830583685896566
+      ],
+      [
+        -0.21802552379095752,
+        3.1770776490188872
+      ],
+      [
+        0.7557797451929059,
+        0.3025619166222173
+      ],
+      [
+        0.5,
+        0
+      ]
+    ],
+    "occupancyPolygon": [
+      [
+        -0.5,
+        0
+      ],
+      [
+        -1.6742346153631364,
+        0.11647156779632045
+      ],
+      [
+        -1.0715405508352767,
+        2.7830583685896566
+      ],
+      [
+        -0.21802552379095752,
+        3.1770776490188872
+      ],
+      [
+        0.7557797451929059,
+        0.3025619166222173
+      ],
+      [
+        0.5,
+        0
+      ]
+    ],
+    "domainImage": [
+      [
+        3147.8728795192214,
+        1068.1272929308384
+      ],
+      [
+        2390.191698396973,
+        1242.3297047184278
+      ],
+      [
+        3176.495361012069,
+        2162.7854976041226
+      ],
+      [
+        3889.775829560179,
+        2170.0337127506273
+      ],
+      [
+        3937.840225898508,
+        1019.9111029924809
+      ],
+      [
+        3741.3231576456155,
+        962.4511794257794
+      ]
+    ],
+    "domainArea": 5.004466161736458,
+    "mouth": {
+      "p0": [
+        -0.5,
+        0
+      ],
+      "p1": [
+        0.5,
+        0
+      ],
+      "inboundSign": -1
+    },
+    "deepCut": {
+      "p0": [
+        -0.5,
+        0
+      ],
+      "p1": [
+        0.5,
+        0
+      ],
+      "role": "compatibility mouth boundary; no observed deep tunnel strip"
+    },
+    "tunnelPolygon": [
+      [
+        -0.5,
+        0
+      ],
+      [
+        0.5,
+        0
+      ],
+      [
+        0.5,
+        0
+      ],
+      [
+        -0.5,
+        0
+      ]
+    ],
+    "tunnelStripAvailable": false,
+    "routes": {
+      "inbound": {
+        "waypoints": [
+          [
+            0,
+            0.18
+          ],
+          [
+            0,
+            -0.18
+          ],
+          [
+            0,
+            -0.5
+          ]
+        ],
+        "exitOnGoal": true,
+        "useAgentLane": true
+      },
+      "outbound": {
+        "waypoints": [
+          [
+            0,
+            0.25
+          ],
+          [
+            -0.6447830373131171,
+            3.480068008804272
+          ]
+        ],
+        "exitOnGoal": true
+      },
+      "left": {
+        "waypoints": [
+          [
+            -2.1742346153631367,
+            1.490034004402136
+          ]
+        ],
+        "exitOnGoal": true
+      },
+      "right": {
+        "waypoints": [
+          [
+            1.255779745192906,
+            1.490034004402136
+          ]
+        ],
+        "exitOnGoal": true
+      }
+    },
+    "units": "W: D mouth span mapped through fixed calibration; not metres",
+    "domainRole": "User ROI with open observation edges, one visible facade wall and mouth on open boundary",
+    "boundaryMouthLimitation": "Outbound arrivals from behind the mouth begin just inside the open boundary. Their input boundary crossing is not a later simulated crossing. Into-mouth departures are recorded by the unchanged engine before open-domain removal.",
+    "cameraMotionPolicy": "User geometry registered once from sample535 to30s reference; raw tracks projected without per-frame registration"
+  },
+  "deepCut": {
+    "p0": [
+      -0.5,
+      0
+    ],
+    "p1": [
+      0.5,
+      0
+    ],
+    "role": "compatibility mouth boundary; no observed deep tunnel strip"
+  },
+  "units": "W",
+  "normalization_reference_span": 682.8023792556675,
+  "oneTimeRegistration": {
+    "annotationSample": 535,
+    "transformField": "current1280ToReference1280",
+    "matrix": [
+      [
+        0.9395342613017752,
+        -0.01385819203270894,
+        37.5351295078063
+      ],
+      [
+        -0.007516615290626319,
+        0.9643612975672369,
+        8.048565809982858
+      ],
+      [
+        -4.456177609174063e-05,
+        -7.361733606162852e-06,
+        1.0
+      ]
+    ],
+    "direction": "1280x720 current-image pixels -> existing 30s 1280x720 reference. For raw3840 pixels: diag(3,3,1) @ H @ diag(1/3,1/3,1). Tracker y padding8 removed before transform.",
+    "sourceTimeSeconds": 516.7167167167167,
+    "inliers": 111,
+    "matches": 123,
+    "inlierFraction": 0.9024390243902439,
+    "medianResidualPixels1280": 0.35035231709480286,
+    "p95ResidualPixels1280": 1.0061100721359253,
+    "floorModelDisagreementPixels1280": 31.670074462890625,
+    "interpretation": "Background-registration residual; not independent ground-plane accuracy. Exact sample535 projective transform used, not similarity transform."
+  },
+  "annotationOriginal": {
+    "mouthPixels1280": [
+      [
+        1028.0,
+        351.0
+      ],
+      [
+        1217.0,
+        315.0
+      ]
+    ],
+    "roiPixels1280": [
+      [
+        1028.0,
+        351.0
+      ],
+      [
+        782.0,
+        410.9
+      ],
+      [
+        1039.4,
+        708.8
+      ],
+      [
+        1265.5,
+        705.4
+      ],
+      [
+        1279.0,
+        333.2
+      ],
+      [
+        1217.0,
+        315.0
+      ]
+    ]
+  },
+  "annotationReference": {
+    "mouthPixels1280": [
+      [
+        1049.2909598397405,
+        356.0424309769461
+      ],
+      [
+        1247.1077192152052,
+        320.8170598085931
+      ]
+    ],
+    "roiPixels1280": [
+      [
+        1049.2909598397405,
+        356.0424309769461
+      ],
+      [
+        796.7305661323244,
+        414.1099015728093
+      ],
+      [
+        1058.831787004023,
+        720.9284992013743
+      ],
+      [
+        1296.5919431867262,
+        723.3445709168758
+      ],
+      [
+        1312.613408632836,
+        339.9703676641603
+      ],
+      [
+        1247.1077192152052,
+        320.8170598085931
+      ]
+    ]
+  },
+  "annotationGround": {
+    "mouthR": [
+      [
+        0.3266130010945208,
+        -0.022526091733976992
+      ],
+      [
+        0.7614753220017164,
+        -0.016364264243926077
+      ]
+    ],
+    "roiR": [
+      [
+        0.3266130010945208,
+        -0.022526091733976992
+      ],
+      [
+        -0.18473506674011791,
+        0.020887573424916806
+      ],
+      [
+        0.060922825103722794,
+        1.184199395373299
+      ],
+      [
+        0.42965647185962474,
+        1.3608027464997507
+      ],
+      [
+        0.8708399613020689,
+        0.11678458370186841
+      ],
+      [
+        0.7614753220017164,
+        -0.016364264243926077
+      ]
+    ],
+    "mouthW": [
+      [
+        -0.5,
+        0
+      ],
+      [
+        0.5,
+        0
+      ]
+    ],
+    "roiW": [
+      [
+        -0.5,
+        0.0
+      ],
+      [
+        -1.6742346153631364,
+        0.11647156779632045
+      ],
+      [
+        -1.0715405508352767,
+        2.7830583685896566
+      ],
+      [
+        -0.21802552379095752,
+        3.1770776490188872
+      ],
+      [
+        0.7557797451929059,
+        0.3025619166222173
+      ],
+      [
+        0.5,
+        0.0
+      ]
+    ]
+  },
+  "audit": {
+    "mouthWidthReferenceUnits": 682.8023792556675,
+    "mouthWidthOldR": 0.4349059740481958,
+    "roiAreaW2": 5.004466161736458,
+    "roiOutsideCalibrationFractionGround": 0.42883392973717327,
+    "roiOutsideCalibrationFractionImage": 0.4383947559197532,
+    "roiOutsideReferenceImageFractionImage": 0.07015553157202103,
+    "areaMethod": "Convex polygon intersection area divided by full transformed user polygon area; ground ratio is primary.",
+    "roiClipped": false,
+    "rawTracksTransformedPerFrame": false,
+    "mouthAsDomainBoundary": true,
+    "eligibleTunnelInteriorAreaW2": 0,
+    "roundTripMaxPixels1280": 2.5421149729252077e-13
+  },
+  "laneGuard": {
+    "revision": "D_boundary_mouth_geometry_only",
+    "intervalW": [
+      -0.25,
+      0.25
+    ],
+    "changedInboundTargets": [],
+    "changedCount": 0,
+    "minimumPreMouthLaneWallClearanceW": 0.25,
+    "scope": "Same lane range, certified to open mouth; after crossing unchanged engine removes agent at open boundary."
+  }
+}

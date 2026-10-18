@@ -1,0 +1,3 @@
+-r requirements.txt
+# Only needed to rebuild the bundled inputs from the tracker CSV.
+opencv-python-headless>=4.8,<5

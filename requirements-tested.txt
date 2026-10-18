@@ -1,0 +1,8 @@
+# Exact versions used for the release checks; no installation is performed by the code.
+numpy==1.26.4
+scipy==1.12.0
+pandas==2.1.4
+matplotlib==3.10.5
+Pillow==10.2.0
+psutil==5.9.0
+opencv-python-headless==4.10.0.84

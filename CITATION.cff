@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the accompanying manuscript."
+title: "Video-Driven Agent-Based Simulation of Stadium Egress"
+type: software
+version: 1.0.0
+authors:
+  - family-names: He
+    given-names: Ao
+    affiliation: University of Florida
+  - family-names: Wong
+    given-names: Vivian W. H.
+    affiliation: University of Florida

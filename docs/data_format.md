@@ -1,49 +1,118 @@
 # Data format
 
-## Prepared stadium bundle
+The stadium bundle separates inputs that drive movement from observations used to measure agreement. All six tunnels use the same file layout.
 
-Each A–F tunnel has four JSON files:
+For concepts such as ROI and mouth crossings, read [model and measurements](method.md). For commands that rebuild these files, use [the reproduction guide](reproduction.md#rebuild-inputs-from-the-original-tracking-csv).
 
-| Directory | Contents | Used by |
+## Prepared stadium files
+
+Paths are relative to `data/stadium/`.
+
+| File group | Contents | Main use |
 |---|---|---|
-| `calibrated_inputs/` | Scene, initial agents, arrival brackets, rolling speed samples, parameters, fixed threshold | Simulation |
-| `observations/` | Projected tracker frames and strict crossing events | Evaluation and input audit |
-| `observed_measurements/` | Counts, density/speed samples, valid crossing-bin mask | Evaluation |
-| `protocols/` | Clocks, seeds, phases, numerical checks and parameter rules | Simulation and evaluation |
+| `calibrated_inputs/A.json` through `F.json` | Scene, initial agents, arrival brackets, rolling speeds, parameters and fixed threshold | Simulation |
+| `observations/A.json` through `F.json` | Projected tracking frames and strict crossing events | Reference measurements and input audit |
+| `observed_measurements/A.json` through `F.json` | Counts, density/speed samples and valid crossing-bin masks | Evaluation |
+| `protocols/A.json` through `F.json` | Clocks, seeds, phases, parameter rules and numerical checks | Simulation and evaluation |
+| `manifest.json` | Portable and archived source hashes | File identity checks |
 
-`manifest.json` maps each portable file to its archived source hash. Personal directory prefixes have been removed from provenance strings; numerical arrays and identity strings are retained. Historical `version`, `windowId` and seed-domain strings remain because some of them form the deterministic randomization key.
+Personal directory prefixes were removed from provenance strings. Numeric arrays and identity strings remain unchanged. Some historical `version`, `windowId` and seed-domain strings form the randomization keys; changing them can change the seed draws.
 
-### Scene
+## Geometry
 
-`scene.domainPolygon`, `floorPolygon` and `occupancyPolygon` contain `[x, y]` vertices in W. `walls` contains finite `p0`–`p1` segments. `mouth` defines its endpoints and inward direction. `routes` supplies waypoint arrays and whether an agent exits on reaching its goal. The usual normalized mouth is `[-0.5, 0]`–`[0.5, 0]`, with the plaza at positive y.
+The scene defines the coordinates in which agents move.
 
-### Agents and arrivals
+| Field | Meaning |
+|---|---|
+| `scene.domainPolygon` | Boundary of the local simulation domain |
+| `scene.floorPolygon` | Floor geometry |
+| `scene.occupancyPolygon` | Region used to count occupancy |
+| `scene.walls` | Finite physical wall segments, with `p0` and `p1` endpoints |
+| `scene.mouth` | Mouth endpoints and inward direction |
+| `scene.routes` | Waypoint sequences and whether reaching the goal removes an agent |
 
-An agent includes `id`, `sourceId`, `x`, `y`, `vx`, `vy`, `speed`, `routeId`, `waypointIndex` and `lane`. `speed: null` requests a seeded draw from eligible historical speeds. An arrival additionally has `timeBracket: [start, end]`, `sourceSample`, `historyEndSample` and `demandSource`. Times are elapsed source-video seconds from the recording's first tracked sample.
+Polygon vertices are `[x, y]` pairs in tunnel-width units, `W`. The usual mouth spans `[-0.5, 0]` to `[0.5, 0]`, with the plaza at positive y. An ROI edge does not become a wall merely because it appears in a polygon.
 
-`rollingSpeedObservations` contains timestamped consecutive displacements ending inside the ROI. The configuration generator uses only the allowed pre-arrival interval. Do not replace this table with future positions or observed egress.
+The original image-to-ground transformations and frozen scene records are in `data/geometry/`. D uses the final once-registered, fixed geometry in W units.
 
-### Observations
+## Initial agents and arrival records
 
-Frames contain `time`, `sourceSample` and `agents`, whose points have `id`, `x` and `y`. `agents: null` means an unavailable observation. An available empty ROI has `agents: []`. These cases must remain distinct.
+| Field | Meaning |
+|---|---|
+| `id` | Simulation identifier for the input agent |
+| `sourceId` | Identity in the source camera's tracking record |
+| `x`, `y` | Ground position in W |
+| `vx`, `vy` | Velocity components in W per source-video s |
+| `speed` | Desired speed; null requests the configured fallback or draw |
+| `routeId` | Assigned route |
+| `waypointIndex` | Current target along that route |
+| `lane` | The route's lateral offset input |
+| `timeBracket` | Earliest and latest arrival time allowed by the sampled track |
+| `sourceSample` | Native tracking sample supporting the arrival |
+| `historyEndSample` | End of the available history used for input construction |
+| `demandSource` | Boundary-confirmed arrival or inferred tunnel birth |
 
-## Rebuild from tracker CSV
+Arrival fields occur in addition to the position and route fields. Times are elapsed source-video seconds from the first tracked sample.
 
-Install `requirements-prepare.txt` only if this step is needed. The CSV is read without modification:
+`rollingSpeedObservations` stores timestamped consecutive displacements ending inside the ROI. Configuration draws use only the allowed pre-arrival interval. Reference egress totals and later observed positions are not substituted into this table.
 
-```bash
-python prepare.py --tracks /path/to/tracking_df_stadium_2023_1fps.csv --output outputs/prepared
-python run.py stadium --data outputs/prepared --full --output outputs/rebuilt_runs
-```
+An arrival's sampled time and its actual admission time can differ when entry space is occupied. Both are retained so demand coverage and admission can be analyzed separately.
 
-Required columns are `cam_name`, `frame_number`, `person_id`, `img_x` and `img_y`; camera values are `Tunnel A` through `Tunnel F`. Coordinates follow the original 3840 × 2160 tracking convention. The adapter retains the original 8 px vertical point adjustment before homography projection. It uses the supplied homography, scene and lane-clearance records in `data/geometry/preparation/`.
+## Reference frames and missing observations
 
-This entry point prepares the existing study geometry. A new site needs its own homography, observed floor, mouth, physical walls and route definitions; simply changing a camera letter is insufficient. The detector and tracker are not rerun here.
+Frames contain `time`, `sourceSample` and `agents`. Each observed point has `id`, `x` and `y`.
 
-## Run files
+| Value | Interpretation |
+|---|---|
+| `agents: []` | A valid observation with no people in the region |
+| `agents: null` | An unavailable observation |
+| Nonempty `agents` array | Available observed positions |
 
-`runs/E__feedback_on__seed01.json` contains configuration, saved states, sampled counters, crossings, admissions, numerical diagnostics, measurements and summary scores. Its receipt contains a SHA256 checksum. Run provenance binds code, prepared inputs and protocol hashes.
+Do not turn null into zero when analyzing these files. That would turn missing frames into an artificial empty crowd. Crossing-bin coverage flags identify intervals suitable for comparison; strict cumulative crossing counts retain observed events without filling missing intervals.
 
-`--duration` produces a separate diagnostic filename and marks `paperResult: false`. Evaluation excludes diagnostic runs from the experiment tables.
+## Original tracking CSV
 
-The historical CSV suffix `_agents` counts people or crossing events. `W`, `W0`, source-video seconds, model seconds and dataset time remain distinct. No physical metre scale is implied.
+The optional adapter expects these columns:
+
+| Column | Meaning |
+|---|---|
+| `cam_name` | `Tunnel A` through `Tunnel F` |
+| `frame_number` | Frame/sample field from the original tracking export, interpreted by the frozen clock mapping |
+| `person_id` | Camera-local tracking identity |
+| `img_x`, `img_y` | Image coordinates in the original 3840 × 2160 convention |
+
+The adapter retains the original 8 px vertical point adjustment before homography projection. It uses the supplied homography, ROI, walls, mouth and lane-clearance data in `data/geometry/preparation/`.
+
+A new site needs its own geometry and calibration. Changing a camera letter or swapping the CSV does not establish compatible units or routes. The supplied reconstruction command is for this recorded study.
+
+## Saved simulation files
+
+A full stadium run such as `runs/E__feedback_on__seed01.json` contains:
+
+| Content | Purpose |
+|---|---|
+| Configuration and seeded draws | Reconstruct which inputs and random choices drove the run |
+| Native saved states | Inspect individual positions and velocities |
+| Sampled counts and mouth crossings | Form occupancy and flow curves |
+| Admissions and pending-population diagnostics | Distinguish supplied demand from people already inside |
+| Numerical checks | Inspect finite values, conservation, overlap and wall constraints |
+| Measurements, metrics and summary | Read the run's scores |
+| Provenance hashes | Identify the code, inputs and protocol used |
+
+The adjacent `.json.receipt.json` stores a checksum and status. A batch has `batch.json` plus execution and per-run logs in `logs/`.
+
+Shortened `--duration` runs use a `diagnostic__` filename and `paperResult: false`. The evaluator excludes them from experiment tables.
+
+## Units and output column names
+
+| Unit or convention | Use |
+|---|---|
+| `W` | Each stadium tunnel's mouth width |
+| `W0` | S1's synthetic reference length |
+| `U` | MOT20's window-specific provisional ground length |
+| Source-video s | Stadium integration and measurement-bin time |
+| Dataset time `tV` | Shared plotting clock and annotated phases |
+| Model s | Time in the controlled S1 experiment |
+| Historical `_agents` suffix | People or crossing events in count fields |
+
+These lengths are normalized, not measured metres. The column names are retained for compatibility with the saved results. See [results](results.md) for error definitions and the table index.

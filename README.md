@@ -1,26 +1,64 @@
 # Stadium egress simulation
 
-Code and prepared inputs for **Video-Driven Agent-Based Simulation of Stadium Egress**, by Ao He and Vivian W. H. Wong.
+Simulate people moving through stadium tunnel areas, using tracked video to supply the initial crowd and later arrivals.
 
-The simulator moves individual pedestrians through an observed floor region. Each agent has a route and a desired speed. Agents deposit density on a grid and receive a bounded congestion correction, with their own deposit excluded. The experiments compare feedback OFF and ON under the same recorded arrivals and random seeds.
+Code for **Video-Driven Agent-Based Simulation of Stadium Egress**, by Ao He and Vivian W. H. Wong. [中文说明](README_zh.md)
 
-This package reproduces the final **six-tunnel, full-recording study** and the **controlled bottleneck experiment (S1)**. The six-tunnel inputs are included, so the main workflow does not need the source videos or an object detector.
+## What the model does
 
-## Setup
+We study how crowds build up and clear near a tunnel mouth during stadium egress, the process of leaving the stadium after an event. Each simulated person is an **agent** with a position, route and desired walking speed. The model advances their movement in small time steps while accounting for nearby people and walls.
 
-Use Python 3.11+ and Node.js 20+; the reference simulation ran on Node.js 24.19.0. No npm packages are required. From this directory:
+The experiment tests **congestion feedback**. Agents contribute to a grid that measures local crowding. Where crowding exceeds a fixed threshold, the grid sends a bounded correction back to their movement. We compare feedback **OFF** and **ON** with the same people, arrivals and random seed.
+
+The stadium experiment covers six tunnels, A–F, over the full recording. Each tunnel is simulated separately inside its camera's **observation region (ROI)**. The included data are already processed; you can run the simulations without downloading the videos or running a detector.
+
+```mermaid
+flowchart LR
+    T["Tracked positions"] --> I["Initial people and arrivals"]
+    G["ROI, mouth line and walls"] --> S["Agent simulation: OFF / ON"]
+    I --> S
+    S --> M["Simulated counts and crossings"]
+    T --> R["Tracking reference"]
+    M --> C["Compare at the same places and times"]
+    R --> C
+```
+
+The reference counts are measured from the tracks. They are used to evaluate the result; they do not reset the simulated crowd to match the video.
+
+## Three experiments
+
+| Experiment | What it answers | What is included |
+|---|---|---|
+| Stadium | How does feedback affect agreement with tracked occupancy and tunnel crossings? | Six tunnel recordings, ten paired seeds, 120 runs |
+| S1 bottleneck | What does feedback change when geometry and inflow are controlled? | A plaza, narrow tunnel and timed gate; four inflows, 80 runs |
+| MOT20 auxiliary check | How well do short simulated trajectories match annotated pedestrian tracks? | Four valid windows, four motion methods; [details](auxiliary/mot20/README.md) |
+
+S1 is the small experiment to run first. “Paired” means each seed is used once with feedback OFF and once with feedback ON.
+
+## Start here
+
+Use Python 3.11+ and Node.js 20+. The recorded simulations used Node.js 24.19.0. Python manages runs and analysis; Node executes the movement model. The simulation uses CPU workers and does not use a GPU.
+
+Download the repository using **Code → Download ZIP** and extract it, or clone it:
+
+```bash
+git clone https://github.com/ahe619/Flow-Simulator.git
+cd Flow-Simulator
+```
+
+Open a terminal in the directory containing `run.py` and `README.md`. Install the Python dependencies and check Node:
 
 ```bash
 python -m pip install -r requirements.txt
 node --version
-python run.py --help
+python verify_package.py
 ```
 
-If Node is not on PATH, add `--node /path/to/node` to a run command or set `NODE_BINARY`. The simulation uses CPU workers. A GPU is not used.
+No npm packages are required. For environment setup and Windows instructions, use the [first-run guide](docs/getting-started.md).
 
-## First run
+## Run a small example
 
-The following runs one paired S1 case at inflow 6, then makes tables and figures:
+These commands run one S1 seed with feedback OFF and ON, calculate the metrics, and produce a figure:
 
 ```bash
 python run.py bottleneck --inflows 6 --seeds 1 --output outputs/s1_demo
@@ -28,7 +66,15 @@ python evaluate.py --experiment bottleneck --runs outputs/s1_demo --output outpu
 python render.py --evaluation outputs/s1_demo_eval --output outputs/s1_demo_figures
 ```
 
-For a stadium example, run tunnel E with one paired seed:
+Open `outputs/s1_demo_figures/bottleneck_metrics.png`. It shows completion time, peak crowding before the gate and peak exit flow. The underlying numbers are in `outputs/s1_demo_eval/figure_data/`. A single seed demonstrates the workflow; the paper's paired confidence intervals require ten seeds.
+
+Output directories must be new. If you already ran this example, choose new names or follow the [resume instructions](docs/reproduction.md#resume-an-interrupted-batch).
+
+The [first-run guide](docs/getting-started.md) explains the files produced at each step. `quickstart.ipynb` provides the same S1 workflow in a notebook.
+
+## Run the stadium experiment
+
+Start with tunnel E and one paired seed:
 
 ```bash
 python run.py stadium --tunnels E --seeds 1 --output outputs/e_demo
@@ -36,77 +82,49 @@ python evaluate.py --runs outputs/e_demo --data data/stadium --output outputs/e_
 python render.py --evaluation outputs/e_demo_eval --output outputs/e_demo_figures --animate
 ```
 
-The animation uses saved counts at 10 s intervals and 12 frames/s. If an existing FFmpeg executable is available, it writes MP4; otherwise it writes GIF. `quickstart.ipynb` runs the same commands from a notebook.
+This runs the complete recording for E. The animation displays saved ROI counts and the event timeline. Native agent positions are also saved in the run JSON; the portable renderer does not generate the manuscript's spatial agent animations.
 
-For a notebook environment, install `requirements-notebook.txt` and open `quickstart.ipynb` in JupyterLab or your existing notebook editor.
-
-Output directories must be new. To resume a batch, repeat its run command with `--resume`; completed files are checked and reused. A change to inputs, numerical code, job selection or diagnostic duration requires a new directory.
-
-## Reproduce the study
+To reproduce all six tunnels and ten paired seeds:
 
 ```bash
 python run.py stadium --full --workers 22 --output outputs/stadium_full
 python evaluate.py --runs outputs/stadium_full --data data/stadium --output outputs/stadium_eval
 python render.py --evaluation outputs/stadium_eval --output outputs/stadium_figures --animate
-
-python run.py bottleneck --full --workers 8 --output outputs/s1_full
-python evaluate.py --experiment bottleneck --runs outputs/s1_full --output outputs/s1_eval
-python render.py --evaluation outputs/s1_eval --output outputs/s1_figures
 ```
 
-The stadium batch contains 120 runs: six tunnels, ten seeds and two feedback conditions. S1 contains 80 runs: four inflows, ten seeds and two conditions. The launcher measures memory on the first job and may reduce the requested worker count. Each worker is a single Node process.
+The launcher may lower the worker count to fit available memory. The archived batch took 20.2 min on 22 CPU workers, with one completed benchmark reused. Runtime will vary on another machine. The saved runs occupy about 3.3 GB; allow at least 6 GB for runs and analysis outputs.
 
-The archived stadium batch took 20.2 min on 22 CPU workers, including one previously completed benchmark. Runtime depends on the machine. Full stadium run files occupy about 3.3 GB; allow at least 6 GB for runs, evaluation and figures. `reference/` contains compact archived tables for comparison.
+## What the results show
 
-To reproduce the phase-time table directly from the bundled six-ROI totals:
+In S1 at high inflow, feedback reduces the peak count before the gate but extends clearance time. The stadium effect depends on the tunnel: ROI occupancy error falls in B, D and E, rises in A and C, and has a paired interval spanning zero in F.
 
-```bash
-python phase_timing.py --input reference/stadium/total_visible_roi_timeseries.csv --output outputs/reference_timing
-```
+The model also retains too many people in some ROIs. Desired speeds estimated from slow observed movement and incomplete arrival inputs help explain the mismatch. Read [the results guide](docs/results.md) for the numbers, how to interpret RMSE and the shaded bands, and what the comparison supports.
 
-The optional MOT20 short-horizon check is under `auxiliary/mot20/`.
+## Find the right file
 
-## Files
+| Location | Purpose |
+|---|---|
+| `run.py` | Run, resume and verify experiments |
+| `evaluate.py` / `render.py` | Turn saved runs into tables, figures and count animations |
+| `prepare.py` | Rebuild stadium inputs from the original tracking CSV |
+| `phase_timing.py` | Calculate crowd-rise and decline times from saved total counts |
+| `src/engine/` | The four numerical engines |
+| `src/inputs/` | Project tracks onto the floor and construct arrivals and speed histories |
+| `data/` | Prepared stadium inputs, tracking reference and geometry |
+| `configs/` | The S1 protocol |
+| `reference/` | Archived tables for checking a reproduction |
+| `auxiliary/mot20/` | The separate annotated-trajectory check |
+| `tests/` | Checks for motion, input preparation, statistics and rendering |
 
-```text
-run.py                 Run and resume paired experiments
-prepare.py             Rebuild inputs from the original tracking CSV
-evaluate.py            Scores, paired intervals, phases and input coverage
-render.py              Time series, overview snapshots and count animation
-phase_timing.py        Onset, half-rise, half-decline and correlation
-quickstart.ipynb       Small end-to-end example
-src/engine/            Four original numerical engine files
-src/inputs/            Projection, arrivals and motion-history extraction
-src/*.cjs              Configuration, calibration, measurements and workers
-data/stadium/          Prepared inputs and automatic tracking reference
-data/geometry/         Frozen homographies, walls, mouth lines and ROIs
-configs/               Bottleneck protocol
-reference/             Archived summary tables and release verification
-tests/                 Numerical, preparation and evaluation checks
-docs/                  Method, data format and reproduction details
-outputs/               New runs and figures; excluded from version control
-```
+The historical filename `stadium-macro-engine.js` contains the **agent-based** stadium model. The four engine files retain the bytes used in the recorded experiments.
 
-`stadium-macro-engine.js` is the historical filename of the **agent-based** stadium engine. It does not implement the event-level queueing model. All four engine files are retained byte-for-byte to preserve the reported numerical behavior.
+## Read further
 
-## Checks
+- [First-run guide](docs/getting-started.md): setup, a complete small example and common errors.
+- [Model and measurements](docs/method.md): feedback, geometry, arrivals, units and time.
+- [Reading the results](docs/results.md): outputs, error metrics and expected findings.
+- [Reproduce the study](docs/reproduction.md): full commands, resume, tests and input reconstruction.
+- [Data format](docs/data_format.md): file contents and field definitions.
+- [Provenance](docs/provenance.md): code and data origins, AI assistance and distribution scope.
 
-Install `requirements-prepare.txt` to include the OpenCV-dependent preparation tests.
-
-```bash
-node --test tests/*.test.cjs
-node --test auxiliary/mot20/tests.test.cjs
-python -m unittest discover -s tests -p "test_*.py" -v
-python run.py verify outputs/stadium_full
-python verify_package.py
-```
-
-Tests cover isolated-agent zero feedback, walls, conservation, seed pairing, missing observations, arrival timing and paired statistics. The release verification also compares regenerated inputs and selected complete runs with the archived experiment.
-
-## Interpretation
-
-Stadium positions use each tunnel's mouth width, `W`; S1 uses its synthetic reference length, `W0`. These are normalized lengths. Stadium reference counts come from automatic detection and tracking. D uses fixed geometry after a one-time registration of its annotation. Phases organize measurement and display; recorded demand and the motion rules drive the simulation.
-
-The paper reports channel-dependent feedback effects and incomplete input coverage. Reproduction should retain those differences. See [method](docs/method.md), [data format](docs/data_format.md) and [reproduction](docs/reproduction.md) for the definitions and expected results.
-
-This distribution contains the authors' simulation and analysis code, prepared numeric data and aggregate reference tables. Source videos, paper drafts, correspondence and previous experiment versions are outside the package. AI-assisted code development and its verification are recorded in [provenance](docs/provenance.md).
+The package includes processed numeric inputs and reference tables. Raw videos, the original detector/tracker execution, paper drafts and manually composed figure panels remain outside this repository. No software or data license has been assigned in this package.

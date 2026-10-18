@@ -1,58 +1,137 @@
-# Reproduction
+# Reproduce the study
 
-Start with the commands in the README. The bundled inputs are sufficient for both feedback conditions across the complete recordings. `prepare.py` is an optional route back to the original tracking CSV.
+Run these commands from the repository root after completing the [first-run guide](getting-started.md). The bundled numeric inputs are sufficient for the stadium and S1 experiments.
 
-## Expected checks
+## Reproduce six full recordings
 
-After a full stadium run, `evaluate.py` exports the following files under `figure_data/`:
+```bash
+python run.py stadium --full --workers 22 --output outputs/stadium_full
+python run.py verify outputs/stadium_full
+python evaluate.py --runs outputs/stadium_full --data data/stadium --output outputs/stadium_eval
+python render.py --evaluation outputs/stadium_eval --output outputs/stadium_figures --animate
+```
 
-- `run_summary.csv`, `ensemble_summary.csv`, `paired_effects.csv`: per-run metrics and paired effects.
-- `phase_summary.csv`: scores within the annotated phases.
-- `demand_coverage.csv`: conservative arrival-bracket coverage, seeded schedule coverage and actual admission.
-- `timeseries_10s.csv`, `native_timeseries.csv`, `crossings_10s.csv`: measured curves.
-- `total_visible_roi_timeseries.csv`: six-ROI totals on the shared dataset-time grid.
-- `phase_timing_metrics.csv`: onset, half-rise, half-decline and raw Pearson correlation when all six tunnels and ten paired seeds are available.
+`--full` selects A–F, seeds 1–10 and both feedback conditions: 120 runs. The original batch used 22 CPU workers; lower `--workers` for another machine. Worker count changes scheduling, not the seeded simulation.
 
-Rounded ROI occupancy RMSE values from the archived full-recording study are:
+Each worker is a single Node process. The first pending job measures memory and counts as part of the batch. Later concurrency is limited to 70% of available memory, divided by twice that observed worker peak, and capped by the requested worker count, CPU count and 32.
 
-| Tunnel | Feedback OFF | Feedback ON | ON − OFF |
-|---|---:|---:|---:|
-| A | 9.42 | 15.69 | +6.27 |
-| B | 3.60 | 3.35 | −0.25 |
-| C | 21.73 | 25.44 | +3.71 |
-| D | 7.99 | 7.77 | −0.22 |
-| E | 32.71 | 28.81 | −3.90 |
-| F | 5.44 | 5.32 | −0.13 |
+Run files occupy about 3.3 GB. Allow at least 6 GB for runs and analysis. The archived batch took 20.2 min on 22 workers, including one completed benchmark reused from an earlier run. This timing is a reference, not a runtime guarantee.
 
-The full precision values and intervals are in `reference/stadium/`. Minor differences in displayed differences can arise from rounding the means separately.
+## Reproduce the bottleneck experiment
 
-The six-ROI phase-time check should return:
+```bash
+python run.py bottleneck --full --workers 8 --output outputs/s1_full
+python run.py verify outputs/s1_full
+python evaluate.py --experiment bottleneck --runs outputs/s1_full --output outputs/s1_eval
+python render.py --evaluation outputs/s1_eval --output outputs/s1_figures
+```
 
-| Series | Onset | Half-rise | Half-decline |
-|---|---:|---:|---:|
-| Tracking reference | 665 | 1054 | 1986 |
-| Feedback OFF | 694 | 1113 | 2332 |
-| Feedback ON | 719 | 1110 | 2332 |
+S1 uses four inflows, ten seeds and two conditions: 80 runs. The figure contains all four inflow levels. `configs/bottleneck.json` contains the final `0.01` model s step and the archived demand hashes.
 
-Times are dataset seconds. Raw correlations are approximately 0.9166 and 0.9124, using 2,000 common valid instants. The protocol retains the time grid and excludes 477 missing or out-of-record instants.
+## Select a smaller batch
 
-At S1 inflow 6, the mean peak gate-front count changes from 39.0 to 35.3 and clearance takes about 4.48 model s longer with feedback. At inflow 2, the separate mouth-front peak rises from 5.0 to 8.4. Compare the saved tables rather than expecting a uniformly beneficial feedback effect.
+```bash
+python run.py stadium --tunnels C E --seeds 1 2 --workers 4 --output outputs/ce_subset
+```
 
-## Repeatability
+This selects two tunnels, two seeds and both conditions, giving eight runs. It still runs each selected recording for its complete duration.
 
-Worker count changes scheduling, not seed draws. For an exact regression, use the reference Node major version and compare scientific arrays, configuration and scores. Whole-file hashes change with provenance timestamps and elapsed runtime.
+| Option | Meaning |
+|---|---|
+| `--tunnels A B C D E F` | Select stadium tunnels; default is E |
+| `--inflows 1 2 4 6` | Select S1 inflows; default is 6 |
+| `--seeds 1 2` | Select from the frozen seeds 1–10; default is 1 |
+| `--methods off on` | Select conditions; default is both |
+| `--workers 4` | Maximum concurrent processes; default is 4, allowed range 1–32 |
+| `--full` | Select the full study's tunnels or inflows, ten seeds and both conditions |
+| `--output PATH` | New output directory; omitting it creates a timestamped directory |
+| `--node PATH` | Node executable; otherwise use `NODE_BINARY` or PATH |
+| `--data PATH` | Stadium input bundle; default is `data/stadium` |
+| `--duration SECONDS` | A shortened diagnostic, excluded from experiment tables |
+| `--resume` | Continue a compatible existing simulation batch |
 
-The first job of a batch supplies the measured worker-memory estimate. A 70% available-memory budget, with twice that observed per-worker peak, limits subsequent concurrency. Completed files are retained if a worker fails. A changed or incomplete result is reported rather than silently replaced.
+`PATH` and `SECONDS` in this table describe arguments to replace with your own values. Do not combine `--duration` with `--full`. The [README](../README.md) contains complete example commands.
 
-For a quick installation check, use a new output directory:
+## Resume an interrupted batch
+
+Repeat the original simulation command, preserving its output path and job selection, and add `--resume`:
+
+```bash
+python run.py stadium --full --workers 22 --output outputs/stadium_full --resume
+```
+
+The launcher checks completed files and receipts before reusing them. You can change worker count, but input files, numerical code, selected jobs and diagnostic duration must match the batch.
+
+An incomplete run file or checksum mismatch stops the launcher. Keep that batch for inspection and use a new output directory. The launcher does not silently overwrite damaged results.
+
+Evaluation and rendering also require new output directories. Their commands do not have a resume option.
+
+## Check the installation without a full recording
 
 ```bash
 python run.py stadium --tunnels D --methods off on --duration 10 --workers 2 --output outputs/smoke
 python run.py verify outputs/smoke
 ```
 
-This verifies execution and numerical checks only. Its shortened results are excluded from study tables.
+This checks execution and numerical gates over a short interval. Its filenames start with `diagnostic__`, and evaluation excludes it from paper-result tables.
 
-## Scope of the rendering
+## Recalculate phase timing from the saved reference table
 
-The portable renderer uses saved tables for time-series figures, counts in six tunnel tiles and a whole-event timeline. It records its source hashes. Native agent states are retained in run JSON for spatial animation or inspection. The manuscript's hand-composed scene/map panels and Overleaf layout remain separate from numerical reproduction.
+```bash
+python phase_timing.py --input reference/stadium/total_visible_roi_timeseries.csv --output outputs/reference_timing
+```
+
+This calculation uses the included full-study totals and requires no new simulation. Compare onset, half-rise and half-decline with [the expected values](results.md#phase-timing).
+
+The main evaluator automatically adds this table only when all six tunnels and ten paired seeds are present.
+
+## Rebuild inputs from the original tracking CSV
+
+This optional step requires the original CSV, which is not bundled. Place your copy at `inputs/tracking_df_stadium_2023_1fps.csv` under the repository root, or change the path in the command. Leave the supplied geometry unchanged for this reproduction.
+
+```bash
+python -m pip install -r requirements-prepare.txt
+python prepare.py --tracks inputs/tracking_df_stadium_2023_1fps.csv --output outputs/prepared
+python run.py stadium --data outputs/prepared --full --output outputs/rebuilt_runs
+python evaluate.py --runs outputs/rebuilt_runs --data outputs/prepared --output outputs/rebuilt_eval
+```
+
+The adapter reads the CSV without modifying it. It performs the existing geometry projection, arrival construction, speed-history extraction and threshold calibration. It does not rerun the detector or tracker. See [data format](data_format.md#original-tracking-csv) for required fields.
+
+## Run MOT20 and the tests
+
+The optional annotated-trajectory check is independent of the stadium launch command:
+
+```bash
+node auxiliary/mot20/run.cjs --output outputs/mot20
+```
+
+Install the preparation dependencies before running the full Python test suite, because it includes OpenCV-dependent projection tests:
+
+```bash
+python -m pip install -r requirements-prepare.txt
+node --test tests/*.test.cjs
+node --test auxiliary/mot20/tests.test.cjs
+python -m unittest discover -s tests -p "test_*.py" -v
+python verify_package.py
+```
+
+The release check passed 60 engine/configuration tests, 25 Python tests and five MOT20 tests. [release_verification.json](../reference/release_verification.json) records additional comparisons: rebuilt six-tunnel inputs, complete E and S1 seed-1 pairs, all 16 valid MOT20 method/window combinations, and postprocessing of the archived 120 stadium runs.
+
+These checks did not rerun all 120 stadium simulations during packaging. They verified the saved full-study tables and selected complete numerical reruns.
+
+## Figures and animations
+
+`render.py` reads evaluation tables and checks their hashes before drawing. It creates PDF and PNG time series, overview snapshots, and an optional count animation. The default animation takes a frame every 10 dataset seconds and plays at 12 frames/s.
+
+An existing FFmpeg executable produces MP4. If FFmpeg is unavailable, the renderer writes GIF. Supply `--ffmpeg PATH` to use an executable outside PATH, or `--animation-seed 2` to display a different seed present in the batch.
+
+Static stadium time series omit phase backgrounds by default. Add `--phase-bands` when you want them; the overview retains the event timeline. Fonts use embedded TrueType output. `render.py` records table and script hashes in its output manifest.
+
+The portable renderer covers numerical plots and count animations. Saved run JSON also contains agent positions, but the manuscript's spatial animations, scene/map panels and Overleaf layout are separate assets.
+
+## Compare a reproduction
+
+Compare scientific arrays, configurations and metrics with the reference outputs. Use Node.js 24.19.0 for the closest match to the checked environment. Whole-run JSON hashes can differ because elapsed runtime and provenance timestamps change.
+
+The [results guide](results.md) gives expected metrics and interpretations. [environment.json](../environment.json) and [requirements-tested.txt](../requirements-tested.txt) record the checked dependency versions.

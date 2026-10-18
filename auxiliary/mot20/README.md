@@ -12,7 +12,15 @@ are evaluated with the same cohort across four methods:
 | `agent_stage1` | Agent motion with congestion feedback | 0.601733 | 1.189807 |
 | `cv_1s` | Constant velocity, last second of history | 0.580052 | 1.168324 |
 
-The table gives equal-window means. Pressure activation ranges from 1.3% to
+ADE (average displacement error) measures the distance between a simulated
+position and its annotated reference, averaged over the prediction steps.
+FDE (final displacement error) measures that distance at the last step. Lower
+values mean closer trajectories. A person-window is one person evaluated in
+one time window; the same identity can appear in more than one window.
+
+The table gives equal-window means, so each of the four windows has the same
+weight regardless of how many people it contains. GT means ground truth:
+here, the manually annotated reference trajectories. Pressure activation ranges from 1.3% to
 3.8%, below the recorded 5% target in every window. These results provide a
 limited short-horizon check; they do not establish ground truth for Stadium
 occupancy, egress flow or the density–speed relationship.

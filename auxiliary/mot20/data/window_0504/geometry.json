@@ -1,0 +1,274 @@
+{
+  "status": "provisional_registered_geometry",
+  "registration_applied": true,
+  "sequence": "MOT20-03",
+  "fps": 25,
+  "selected": {
+    "start_frame": 454,
+    "anchor_frame": 504,
+    "end_frame": 604,
+    "start_time_s": 18.12,
+    "anchor_time_s": 20.12,
+    "end_time_s": 24.12,
+    "active_rows": 16027,
+    "active_ids_in_span": 127,
+    "active_at_anchor": 101,
+    "initial_agents": 101,
+    "anchor_only_excluded_initial": 0,
+    "full_history_ids": 93,
+    "eligible_full_span_ids": 91,
+    "initial_without_full_future": 3,
+    "future_ids_absent_at_anchor": 20,
+    "future_first_seen_ids": 20,
+    "future_unsimulated_ids": 20,
+    "visibility_below_half_rows": 3967,
+    "visibility_below_half_fraction": 0.24751981032008485,
+    "visibility_zero_rows": 52,
+    "eligible_low_visibility_rows": 3859,
+    "mean_image_person_count": 106.13907284768212,
+    "min_image_person_count": 97,
+    "max_image_person_count": 117
+  },
+  "units": "U; normalized author-estimated ground length, not measured metres",
+  "unit_definition": "1 U = median complete-history 51-observation OLS speed times 1 second",
+  "L": 0.48628273222360174,
+  "origin": [
+    12.842508833252271,
+    1.3670210899237718
+  ],
+  "H_image_to_U": [
+    [
+      0.0,
+      -0.002687197240732016,
+      1.0506941211262186
+    ],
+    [
+      -0.002204090933476927,
+      -0.0001399282893434584,
+      1.1442369312439606
+    ],
+    [
+      0.0,
+      4.981234283953022e-05,
+      0.05245804545447209
+    ]
+  ],
+  "H_U_to_image": [
+    [
+      151.00689403951958,
+      -453.7017891646204,
+      6871.7826597185085
+    ],
+    [
+      -271.37778629868666,
+      0.0,
+      5435.487391838564
+    ],
+    [
+      0.257690945459931,
+      0.0,
+      13.901502280917043
+    ]
+  ],
+  "A_estimated_ground_to_image": [
+    [
+      310.53312,
+      -933.0,
+      4159.189
+    ],
+    [
+      -558.06585,
+      0.0,
+      12602.453
+    ],
+    [
+      0.52992,
+      0.0,
+      7.096
+    ]
+  ],
+  "homography_reference": "Anchor image frame 504; apply frame_to_anchor first, anchor_to_frame after backprojection",
+  "H_U_to_image_denominator": "Positive model camera depth preserved; no arbitrary homogeneous sign flip",
+  "camera": {
+    "R": [
+      [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        -0.84805,
+        -0.0,
+        -0.52992
+      ],
+      [
+        0.52992,
+        0.0,
+        -0.84805
+      ]
+    ],
+    "T_file_mm": [
+      1.0,
+      10161.0,
+      7096.0
+    ],
+    "K": [
+      [
+        933.0,
+        0.0,
+        586.0
+      ],
+      [
+        0.0,
+        933.0,
+        440.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "ground_z": 0,
+    "translation_conversion": "T/1000 matching existing author mapper; accuracy unverified"
+  },
+  "normalization": {
+    "frames_used": [
+      454,
+      504
+    ],
+    "full_history_ids": [
+      8,
+      9,
+      12,
+      13,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      32,
+      33,
+      34,
+      35,
+      37,
+      48,
+      49,
+      51,
+      52,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      64,
+      65,
+      66,
+      67,
+      74,
+      75,
+      77,
+      78,
+      79,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      108,
+      110,
+      111,
+      112,
+      113,
+      151,
+      180,
+      186,
+      193,
+      277,
+      299,
+      304,
+      305,
+      307,
+      308,
+      309,
+      311,
+      313,
+      314,
+      322,
+      323,
+      327,
+      328,
+      347,
+      428,
+      440,
+      449,
+      491,
+      494,
+      501,
+      543
+    ],
+    "historical_observations_per_id": 51,
+    "future_used_for_initialization_or_normalization": false,
+    "eligibility_used_for_mapping_or_normalization": false,
+    "historical_LS_speed_quantiles_author_units_per_s": {
+      "min": 0.0780803397193885,
+      "p50": 0.48628273222360174,
+      "p95": 0.6861308714404354,
+      "max": 0.8293263792759324
+    }
+  },
+  "pixel_convention": "Raw MOT (left+width/2,top+height), one-based; motion compensation matrices use matching one-based coordinates",
+  "source": {
+    "repository": "https://github.com/corfyi/UCMCTrack",
+    "commit": "7851a49078a6666725d1bda670f0046fcc0d715f",
+    "camera_path": "data/mot20_geometry/ucmctrack/MOT20-03.txt",
+    "camera_sha256": "fe4e73bad666d8b6c6412683627466eaf9d1ae7de380e68354505080fcf05089"
+  },
+  "diagnostics": {
+    "finite": true,
+    "positive_camera_depth": true,
+    "nonpositive_camera_depth_count": 0,
+    "roundtrip_max_px": 1.2862197421537486e-12,
+    "roundtrip_is_calibration_validation": false,
+    "horizon_margin_px_min": 1063.390504462534,
+    "camera_depth_author_units": {
+      "min": 10.348905962668256,
+      "p50": 14.198021766802558,
+      "p95": 18.001522652500597,
+      "max": 18.878620377881454
+    },
+    "past_only_normalization_verified": true,
+    "records": 16027,
+    "anchor_count": 101
+  },
+  "limitations": [
+    "Hand-estimated camera with unknown original reference frame, provisionally assigned to each anchor.",
+    "Parallax, footpoint error and unverified perspective remain after registration.",
+    "Per-window past-only normalization does not make U physical metres or erase perspective uncertainty."
+  ]
+}

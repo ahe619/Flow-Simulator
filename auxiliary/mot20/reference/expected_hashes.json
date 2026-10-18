@@ -1,0 +1,83 @@
+{
+  "serialization": "SHA256 of UTF-8 JSON.stringify parsed numeric arrays/objects",
+  "windows": {
+    "504": {
+      "cv_2s": {
+        "frames_sha256": "8741909119cb1d41f10a802e7b517c3b8581e14a0ad1a932c6e1993a16c45712",
+        "scores_sha256": "48f37bc38e37da41892f8b4b774cda38603724e850ddec598f21af7c39c567ea"
+      },
+      "agent": {
+        "frames_sha256": "c23c7096f28b43b74476dc4b377ca26d7c50072b930c7007d17e89309d660d4e",
+        "scores_sha256": "3495f6c6e97e72036871a54d0e8433ccf16a208d8a15eee96b4800cd79c08287"
+      },
+      "agent_stage1": {
+        "frames_sha256": "f07dddf563b9ff035c321f27f9e4b1926ab8915deaa7834a1bd6556a1e482b21",
+        "scores_sha256": "85b75f3516d4bef98cb43e79382603b84838fca3d6b965bf66da59dc5eb2b034"
+      },
+      "cv_1s": {
+        "frames_sha256": "aefd858d8b546dd3a615472a31a1ead99f26a5bf7cfd3f23649c65e628bad31b",
+        "scores_sha256": "48d5263ca64e3917bf616288bcb406b0d2eb14f765b55bdb32504bbc967654f8"
+      }
+    },
+    "957": {
+      "cv_2s": {
+        "frames_sha256": "afbe04d9b7cfca9d385dfb9f9f2e82f62eb24da5545d4b09ef355671577e7625",
+        "scores_sha256": "77956de57de06e13ad9417d9670e6dab34d50bf924d0b136225455714e39710e"
+      },
+      "agent": {
+        "frames_sha256": "9db0087a597006d33019bdc2389e8f06749763a61adc484fd228963d3ea53bd7",
+        "scores_sha256": "0a63a4d46dbe95350e7506971e9bb015f5c2a8da1a5fe408058dc4e731db81b1"
+      },
+      "agent_stage1": {
+        "frames_sha256": "cfc94200dc5c08a245c123152f969479ca3ecb40e142d27bfd6b4976b7f1c624",
+        "scores_sha256": "a12a541aa8d60eed8a5b6088c978b0555a7b020d4286abca9b9dd67330b4314b"
+      },
+      "cv_1s": {
+        "frames_sha256": "782a3e803630d4200582ef9c897e918fcd1c188b7a9811959da64964925b6bc5",
+        "scores_sha256": "4b74b051fa3cee3e57969bceb09b1fca07e9e13e8c56b3e33d55723f2c5caa8a"
+      }
+    },
+    "1410": {
+      "cv_2s": {
+        "frames_sha256": "321545de8f396887070d08a8b4209210a336eef9a161f717d72b5f21f0058580",
+        "scores_sha256": "43d04d73d107b18a348165d52d200584319295f68624639f459e785707cb421f"
+      },
+      "agent": {
+        "frames_sha256": "935d2d1ade73e13461282ceb12db05b79b0f98cd1b593589dfa69c6eb9b1fa2d",
+        "scores_sha256": "d653184699f496aee874a1a0ef9fb1ef874c2f047d7dcd977a08d791bae60352"
+      },
+      "agent_stage1": {
+        "frames_sha256": "73db39541744b24e46b47e735aa8d93976dc19b4b06bba12ccde5cb00b24cef5",
+        "scores_sha256": "a2baa389b35ff1138c929c29437f7f7b4b5ca99541dd2dcddeaddbc87ceb8987"
+      },
+      "cv_1s": {
+        "frames_sha256": "e880ae06c1ab240347d23db7e429cd6ea8c6e9206bb8b0d60dfdf09cf3da8666",
+        "scores_sha256": "5e067e46fd75ca44e48241c4216ac6d206f91fe20af92333123e1c6b8f9ddca3"
+      }
+    },
+    "2165": {
+      "cv_2s": {
+        "frames_sha256": "5750d82625c046021d1d15eb51448826363ba1ed352b3eb2bb57bc2d0a4fea06",
+        "scores_sha256": "d41121755e5eea9f68cdde343c4c4452c70bead94558ccbcb64214de643531a3"
+      },
+      "agent": {
+        "frames_sha256": "9f817cbafc1f11e04918a9b1a78f09d4751ce387a1d2b1ca78f21018cb94ff6a",
+        "scores_sha256": "a51079a064a0e3ae24eeb12a864053e3cb1acc6bbf5d8a5d159df7010e3bfa78"
+      },
+      "agent_stage1": {
+        "frames_sha256": "6f72818d8b76f28caf794b4021e112bbe4d714006a776b7ab28bff14fcd7f397",
+        "scores_sha256": "2e9b79e3999bdea25452b835e8e8267e21c6837d6266a0c283ec13b5efa0d2f5"
+      },
+      "cv_1s": {
+        "frames_sha256": "52e4b376613e9fa59dc6968f96ff35947cf5ec9706082ab0f2d950dce111ce37",
+        "scores_sha256": "fb371710fad5177f7053b25c44a184701b2c6fd983659f1317a8b1ede9c96561"
+      }
+    }
+  },
+  "source_hashes": {
+    "experiments/results/mot20_aux/instruction8/window_504.json": "666b5a0c4626e46ef44287afb9218c44b113848840c663df7da2bff03aae4223",
+    "experiments/results/mot20_aux/instruction8/window_957.json": "687d773d3cdbf850d86f49835cf93ede4816eae6ef2e908841bad440cf0d6a5c",
+    "experiments/results/mot20_aux/instruction8/window_1410.json": "ef8be1845b4864b75143249686560271aae1b6450b6d4a49a1f53a8c761b4629",
+    "experiments/results/mot20_aux/instruction8/window_2165.json": "47c7b214ed19b037c57f8fddcd30d028783125338b995c5fc5f93531ba017481"
+  }
+}

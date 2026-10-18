@@ -1,0 +1,305 @@
+{
+  "status": "provisional_registered_geometry",
+  "registration_applied": true,
+  "sequence": "MOT20-03",
+  "fps": 25,
+  "selected": {
+    "start_frame": 1360,
+    "anchor_frame": 1410,
+    "end_frame": 1510,
+    "start_time_s": 54.36,
+    "anchor_time_s": 56.36,
+    "end_time_s": 60.36,
+    "active_rows": 21301,
+    "active_ids_in_span": 177,
+    "active_at_anchor": 143,
+    "initial_agents": 143,
+    "anchor_only_excluded_initial": 0,
+    "full_history_ids": 124,
+    "eligible_full_span_ids": 104,
+    "initial_without_full_future": 22,
+    "future_ids_absent_at_anchor": 27,
+    "future_first_seen_ids": 27,
+    "future_unsimulated_ids": 27,
+    "visibility_below_half_rows": 6195,
+    "visibility_below_half_fraction": 0.29083141636542886,
+    "visibility_zero_rows": 343,
+    "eligible_low_visibility_rows": 4636,
+    "mean_image_person_count": 141.0662251655629,
+    "min_image_person_count": 130,
+    "max_image_person_count": 148
+  },
+  "units": "U; normalized author-estimated ground length, not measured metres",
+  "unit_definition": "1 U = median complete-history 51-observation OLS speed times 1 second",
+  "L": 0.49833737332198313,
+  "origin": [
+    11.547351601486676,
+    0.3200771444464777
+  ],
+  "H_image_to_U": [
+    [
+      0.0,
+      -0.002492734574383337,
+      1.1616143116626356
+    ],
+    [
+      -0.00215077459283375,
+      -3.189401590628222e-05,
+      1.2267658960460848
+    ],
+    [
+      0.0,
+      4.981234283953022e-05,
+      0.05245804545447209
+    ]
+  ],
+  "H_U_to_image": [
+    [
+      154.75025935028017,
+      -464.94876930941024,
+      7446.39214477809
+    ],
+    [
+      -278.1050698296998,
+      0.0,
+      6158.270413267477
+    ],
+    [
+      0.26407894087078526,
+      0.0,
+      13.21517256065982
+    ]
+  ],
+  "A_estimated_ground_to_image": [
+    [
+      310.53312,
+      -933.0,
+      4159.189
+    ],
+    [
+      -558.06585,
+      0.0,
+      12602.453
+    ],
+    [
+      0.52992,
+      0.0,
+      7.096
+    ]
+  ],
+  "homography_reference": "Anchor image frame 1410; apply frame_to_anchor first, anchor_to_frame after backprojection",
+  "H_U_to_image_denominator": "Positive model camera depth preserved; no arbitrary homogeneous sign flip",
+  "camera": {
+    "R": [
+      [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        -0.84805,
+        -0.0,
+        -0.52992
+      ],
+      [
+        0.52992,
+        0.0,
+        -0.84805
+      ]
+    ],
+    "T_file_mm": [
+      1.0,
+      10161.0,
+      7096.0
+    ],
+    "K": [
+      [
+        933.0,
+        0.0,
+        586.0
+      ],
+      [
+        0.0,
+        933.0,
+        440.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "ground_z": 0,
+    "translation_conversion": "T/1000 matching existing author mapper; accuracy unverified"
+  },
+  "normalization": {
+    "frames_used": [
+      1360,
+      1410
+    ],
+    "full_history_ids": [
+      208,
+      237,
+      239,
+      251,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      270,
+      271,
+      281,
+      282,
+      283,
+      286,
+      287,
+      317,
+      332,
+      336,
+      337,
+      338,
+      339,
+      340,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      351,
+      352,
+      354,
+      355,
+      356,
+      357,
+      358,
+      365,
+      367,
+      368,
+      369,
+      370,
+      380,
+      382,
+      383,
+      385,
+      388,
+      389,
+      390,
+      392,
+      394,
+      395,
+      396,
+      397,
+      401,
+      402,
+      403,
+      404,
+      407,
+      408,
+      409,
+      410,
+      411,
+      413,
+      414,
+      416,
+      419,
+      420,
+      421,
+      422,
+      424,
+      425,
+      426,
+      431,
+      433,
+      450,
+      451,
+      452,
+      453,
+      454,
+      455,
+      456,
+      457,
+      458,
+      459,
+      460,
+      461,
+      462,
+      463,
+      464,
+      465,
+      467,
+      577,
+      578,
+      585,
+      586,
+      589,
+      590,
+      591,
+      595,
+      596,
+      597,
+      598,
+      599,
+      600,
+      641,
+      649,
+      662,
+      664,
+      666,
+      667,
+      669,
+      670,
+      671,
+      672,
+      673,
+      674,
+      675,
+      679,
+      684,
+      706
+    ],
+    "historical_observations_per_id": 51,
+    "future_used_for_initialization_or_normalization": false,
+    "eligibility_used_for_mapping_or_normalization": false,
+    "historical_LS_speed_quantiles_author_units_per_s": {
+      "min": 0.01567589306565733,
+      "p50": 0.49833737332198313,
+      "p95": 0.7972839335788914,
+      "max": 1.5085073818424077
+    }
+  },
+  "pixel_convention": "Raw MOT (left+width/2,top+height), one-based; motion compensation matrices use matching one-based coordinates",
+  "source": {
+    "repository": "https://github.com/corfyi/UCMCTrack",
+    "commit": "7851a49078a6666725d1bda670f0046fcc0d715f",
+    "camera_path": "data/mot20_geometry/ucmctrack/MOT20-03.txt",
+    "camera_sha256": "fe4e73bad666d8b6c6412683627466eaf9d1ae7de380e68354505080fcf05089"
+  },
+  "diagnostics": {
+    "finite": true,
+    "positive_camera_depth": true,
+    "nonpositive_camera_depth_count": 0,
+    "roundtrip_max_px": 1.5252689837551246e-12,
+    "roundtrip_is_calibration_validation": false,
+    "horizon_margin_px_min": 1063.7322351673233,
+    "camera_depth_author_units": {
+      "min": 10.359626320479482,
+      "p50": 13.131937271639075,
+      "p95": 18.262516528169744,
+      "max": 18.87255550174637
+    },
+    "past_only_normalization_verified": true,
+    "records": 21301,
+    "anchor_count": 143
+  },
+  "limitations": [
+    "Hand-estimated camera with unknown original reference frame, provisionally assigned to each anchor.",
+    "Parallax, footpoint error and unverified perspective remain after registration.",
+    "Per-window past-only normalization does not make U physical metres or erase perspective uncertainty."
+  ]
+}

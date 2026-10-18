@@ -1,0 +1,13 @@
+[
+  {
+    "name": "window_0051",
+    "path": "data/mot20_multiwindow/window_0051",
+    "index": 0,
+    "start_frame": 1,
+    "anchor_frame": 51,
+    "end_frame": 151,
+    "status": "failed",
+    "failure": "ValueError: Registration gate failed at 3 frames: ['120', '126', '127']",
+    "elapsed_seconds": 12.245
+  }
+]

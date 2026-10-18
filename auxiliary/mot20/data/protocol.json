@@ -1,0 +1,73 @@
+{
+  "experiment": "MOT20-03 short-horizon auxiliary check",
+  "sequence": "MOT20-03",
+  "plannedAnchors": [
+    51,
+    504,
+    957,
+    1410,
+    2165
+  ],
+  "validAnchors": [
+    504,
+    957,
+    1410,
+    2165
+  ],
+  "failedAnchorPolicy": "51 remains the prior registration failure; no replacement or rerun",
+  "dataManifest": "manifest.json",
+  "methods": [
+    "cv_2s",
+    "agent",
+    "agent_stage1",
+    "cv_1s"
+  ],
+  "history": "Old same-cohort consecutive OLS over up to 51 observations ending at anchor; cv_1s uses up to the last26 of exactly this history; complete-history scored agents have exactly51/26 points",
+  "horizonSeconds": 4,
+  "modelOptions": {
+    "fps": 25,
+    "steps": 100,
+    "dtMax": 0.02,
+    "tau": 0.5,
+    "repulsionA": 2,
+    "repulsionB": 0.2,
+    "repulsionCutoff": 2,
+    "radius": 0.2,
+    "overlapIterations": 14,
+    "pressureGridSize": 0.6,
+    "pressureGridOrigin": [
+      0,
+      0
+    ],
+    "pressureStiffness": 0.5,
+    "pressureAccelerationLimit": 4,
+    "speedLimit": 3
+  },
+  "pressureLaw": "Current Stage1 hook with own normalized occupancy subtracted per receiver at every node before applying unchanged rho0 and stiffness; total grid density remains descriptive. Zero pressure correction leaves velocity unchanged.",
+  "speedCapOrder": "Both agent arms retain legacy pair/preferred update and common speed cap. Corrected Stage1 skips its post-cap if pressure correction is exactly zero; otherwise applies original acceleration and total-speed caps.",
+  "threshold": {
+    "historySeconds": [
+      -2,
+      0
+    ],
+    "upperEndpointExcluded": true,
+    "rule": "max(occupancy-weightedQ75 historical grid density, occupancy-weightedQ99 isolated-agent density at same historical positions)",
+    "weights": "Node occupancy; same Stadium operational selection rule, recomputed in MOT U with h=.6U",
+    "scope": "All available GT footpoints in 50 strictly historical frames, not future-scored subset",
+    "freeze": "Write independent calibration and source hashes before any rollout/error score; no outcome-based adjustment",
+    "positiveExcess": "Verify at least some historical grid nodes exceed rho0 before rollout"
+  },
+  "activation": {
+    "definition": "Stage1 actual after-cap pressure increments greater than1e-12 divided by all agent-substeps",
+    "targetFraction": 0.05,
+    "failurePolicy": "Retain and report any window below 5%; this is an unmet activation target, separate from numerical validity. Do not retune the final parameters."
+  },
+  "metrics": {
+    "primary": "Per-person mean4s ADE and final FDE in provisional U; equal-window aggregate primary, person-window-weighted secondary",
+    "pixels": "Backproject predictions through the saved U-to-anchor homography and per-frame anchor-to-image registration; evaluate MOT GT bounding-box footpoint error in original pixels",
+    "cohort": "Identical original complete51historical+100future GT trajectories across all four methods; all initial agents simulated, including unscored ones",
+    "uncertainty": "Four windows share one sequence and potentially identities; no independent-person tests, no ten-seedCI, no claim of multi-scene generalization"
+  },
+  "units": "U is per-window normalized author-estimated ground length; 1U=median complete-history OLS speed times1s. U is neither camera mouth width W nor measured metres. Same force/threshold rule does not imply matched physical scale.",
+  "limitations": "Short closed-cohort trajectory auxiliary check, not macro flow validation. GT annotations are human labels but projection and camera calibration remain provisional. No future arrivals, future goals or state resets."
+}

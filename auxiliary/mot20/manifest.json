@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "source": "experiments/mot20_aux_rollout.cjs",
+      "source_sha256": "a99a1b15886553dbae6c655e1f9389f81b16ce959537429c7fdcadb48aa37095",
+      "file": "rollout.cjs",
+      "sha256": "dea6e7b4e71018a881c5e435809ebdcedb8e4e1d76b7eceaf0e4fdb52f9116f2",
+      "adaptation": "portable imports and comments; numerical operations unchanged"
+    },
+    {
+      "source": "experiments/mot20_stage1_adapter.cjs",
+      "source_sha256": "8b9aaf61f4a571af3b24b196a8053fef6c26476d94ff8bb5b63cf3b5cf1ff4d9",
+      "file": "stage1_adapter.cjs",
+      "sha256": "cd5191d2695d6efdeb8d6c59e26e06db56db7c5336eb74268232fbe5bd2c0bb2",
+      "adaptation": "portable imports and comments; numerical operations unchanged"
+    },
+    {
+      "source": "experiments/mot20_aux_metrics.cjs",
+      "source_sha256": "2d496196575735bcb62eb276a8176ce274b733ce6b2563ec294e7e43e81343a5",
+      "file": "metrics.cjs",
+      "sha256": "2d496196575735bcb62eb276a8176ce274b733ce6b2563ec294e7e43e81343a5",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "experiments/pets_windows.cjs",
+      "source_sha256": "4270d96285ae10f558269dbb9dfe5789d28cbed85bf231a50e5cdc21da6dc6d4",
+      "file": "windows.cjs",
+      "sha256": "4270d96285ae10f558269dbb9dfe5789d28cbed85bf231a50e5cdc21da6dc6d4",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "experiments/results/mot20_aux/instruction8/calibration.json",
+      "source_sha256": "6d879357d6eb82e727c636ec9124c19bd757e889ab044dc4678a644e328baf10",
+      "file": "data/calibration.json",
+      "sha256": "6d879357d6eb82e727c636ec9124c19bd757e889ab044dc4678a644e328baf10",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "experiments/results/mot20_aux/instruction8/initial_inputs.json",
+      "source_sha256": "15c7e982a873b6d902f2d546367fc8d4ce2ef326fbc810e5c621d3d94e7ea896",
+      "file": "data/initial_inputs.json",
+      "sha256": "15c7e982a873b6d902f2d546367fc8d4ce2ef326fbc810e5c621d3d94e7ea896",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "experiments/results/mot20_aux/instruction8/protocol.json",
+      "source_sha256": "69cdb7ed759fd0befaa4c9e0b1dc83426dd1ab7513d468c539ffdb9334e43288",
+      "file": "data/protocol.json",
+      "sha256": "49573a6355b7a12e7c8c56df5054f86fcb75dfdcb8c9dc98f80d5bca7d9c9145",
+      "adaptation": "scientific protocol retained; historical orchestration removed"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_0504/observations.json",
+      "source_sha256": "604fce0dcc7d4938f418da749ecbd8ba43322952bff13b2dd3428775a6d751dc",
+      "file": "data/window_0504/observations.json",
+      "sha256": "604fce0dcc7d4938f418da749ecbd8ba43322952bff13b2dd3428775a6d751dc",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_0504/raw_observations.json",
+      "source_sha256": "5d7bcffbd7c59bb8e37e0770c45e31dc1466cd23e8022899b3c6b08ae8ee0194",
+      "file": "data/window_0504/raw_observations.json",
+      "sha256": "5d7bcffbd7c59bb8e37e0770c45e31dc1466cd23e8022899b3c6b08ae8ee0194",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_0504/geometry.json",
+      "source_sha256": "0da0bc449067546583f59b35342e93966d9214e6ea6f928f540b173f2cd7b3d8",
+      "file": "data/window_0504/geometry.json",
+      "sha256": "9ba0eaef709c28ffbf403addae8fe0b3f6b775f142c0aa8f91d65afe4875bc52",
+      "adaptation": "portable imports and comments; numerical operations unchanged"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_0504/registration.json",
+      "source_sha256": "73c1bc04028a6f403151fc8e914d62743ab6df5ab34d645a9e00885a64a42620",
+      "file": "data/window_0504/registration.json",
+      "sha256": "73c1bc04028a6f403151fc8e914d62743ab6df5ab34d645a9e00885a64a42620",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_0957/observations.json",
+      "source_sha256": "654a5639aa2cb78dff13b4b95bfc37133dd1bfafce86490580e7afb5fbc571d8",
+      "file": "data/window_0957/observations.json",
+      "sha256": "654a5639aa2cb78dff13b4b95bfc37133dd1bfafce86490580e7afb5fbc571d8",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_0957/raw_observations.json",
+      "source_sha256": "c579feb72f289bdad4a18eb713f3cff8510df43503bbd23e19ef0fcb2f233193",
+      "file": "data/window_0957/raw_observations.json",
+      "sha256": "c579feb72f289bdad4a18eb713f3cff8510df43503bbd23e19ef0fcb2f233193",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_0957/geometry.json",
+      "source_sha256": "f0a1de5ac49759c10c1fb98ca56635d6054cbc6b537d76631812f5dc3ddc5750",
+      "file": "data/window_0957/geometry.json",
+      "sha256": "1090e2b87142ef24bc383ea2764b250b1e2497caeb4e32fdf8dbecc242adfe71",
+      "adaptation": "portable imports and comments; numerical operations unchanged"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_0957/registration.json",
+      "source_sha256": "d58ef3a2d5a425e49e5b4bd810fe0364b63eeed77b3bb637ac5ea8a2a9d79240",
+      "file": "data/window_0957/registration.json",
+      "sha256": "d58ef3a2d5a425e49e5b4bd810fe0364b63eeed77b3bb637ac5ea8a2a9d79240",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_1410/observations.json",
+      "source_sha256": "09399a40e93cad8ed075589d1a552a2c36868811ab10a79e99fd84ef1752a613",
+      "file": "data/window_1410/observations.json",
+      "sha256": "09399a40e93cad8ed075589d1a552a2c36868811ab10a79e99fd84ef1752a613",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_1410/raw_observations.json",
+      "source_sha256": "d12ab9851ce165cee8b822a7bdc49eecb7a84210c208eb74f991fd3ab3a92298",
+      "file": "data/window_1410/raw_observations.json",
+      "sha256": "d12ab9851ce165cee8b822a7bdc49eecb7a84210c208eb74f991fd3ab3a92298",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_1410/geometry.json",
+      "source_sha256": "28d6276d73a0c360661002c01a39e74c3a0b9abfbd0b38f7cdb15dc66cf7d4d1",
+      "file": "data/window_1410/geometry.json",
+      "sha256": "42b0721a025492f2ce0fe29a97b747a084826c24eba5b932484a9effea6a4226",
+      "adaptation": "portable imports and comments; numerical operations unchanged"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_1410/registration.json",
+      "source_sha256": "170fee5f213e602c1b42c0a473ec2f2cc7935d0a3b2a393a3de5e504f7809785",
+      "file": "data/window_1410/registration.json",
+      "sha256": "170fee5f213e602c1b42c0a473ec2f2cc7935d0a3b2a393a3de5e504f7809785",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_2165/observations.json",
+      "source_sha256": "e1ba276e38e478097f08f069a266babc1697e6f19544e4dd70e375159276ec07",
+      "file": "data/window_2165/observations.json",
+      "sha256": "e1ba276e38e478097f08f069a266babc1697e6f19544e4dd70e375159276ec07",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_2165/raw_observations.json",
+      "source_sha256": "f848d6ef15aa52bd1236f951e22db6174af6e21164f9f0d2522d9773a3d124e3",
+      "file": "data/window_2165/raw_observations.json",
+      "sha256": "f848d6ef15aa52bd1236f951e22db6174af6e21164f9f0d2522d9773a3d124e3",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_2165/geometry.json",
+      "source_sha256": "2f3e70fb380d9885f43ed85cb4136ba9c045efeb6efa86b67fb042043311abab",
+      "file": "data/window_2165/geometry.json",
+      "sha256": "e9a89b3c3002d067ac2d4d81cad0d1f6430299412b81d65cbd0fac08efe22a81",
+      "adaptation": "portable imports and comments; numerical operations unchanged"
+    },
+    {
+      "source": "data/mot20_multiwindow/window_2165/registration.json",
+      "source_sha256": "dccbbeedc3ba9852cfc498570669965c17ce82c9da8d757ba3f3e3da95176076",
+      "file": "data/window_2165/registration.json",
+      "sha256": "dccbbeedc3ba9852cfc498570669965c17ce82c9da8d757ba3f3e3da95176076",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "experiments/results/mot20_aux/instruction8/summary.csv",
+      "source_sha256": "ae7268851622780b3afe3ef7b39b23e8e0754d42c0ea3e3817c4497a22cc8b5a",
+      "file": "reference/summary.csv",
+      "sha256": "ae7268851622780b3afe3ef7b39b23e8e0754d42c0ea3e3817c4497a22cc8b5a",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "experiments/results/mot20_aux/instruction8/aggregate.csv",
+      "source_sha256": "9135af2463484b9931b3efa0c77e8c99a032b89e4f104df80a7d29ba375d9e51",
+      "file": "reference/aggregate.csv",
+      "sha256": "9135af2463484b9931b3efa0c77e8c99a032b89e4f104df80a7d29ba375d9e51",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source": "experiments/results/mot20_aux/instruction8/frozen_manifest.json",
+      "source_sha256": "341f0511a6be8f0b36d30dcbeedf3f2bac38fcb22de520e1af3c0a76b749d219",
+      "file": "data/expected_failures.json",
+      "sha256": "3fb6851122fa61d67f10d9887e267d4099543ecdecafd3940e8f05c4ec8b30e3",
+      "adaptation": "retain failed-window report only"
+    },
+    {
+      "file": "reference/expected_hashes.json",
+      "sha256": "f965feba8f61ad1b477e12d261eab5aa36ff443e1151db28c1591bbfac36973a",
+      "adaptation": "canonical numeric frame and score hashes of archived final runs",
+      "sources": {
+        "experiments/results/mot20_aux/instruction8/window_504.json": "666b5a0c4626e46ef44287afb9218c44b113848840c663df7da2bff03aae4223",
+        "experiments/results/mot20_aux/instruction8/window_957.json": "687d773d3cdbf850d86f49835cf93ede4816eae6ef2e908841bad440cf0d6a5c",
+        "experiments/results/mot20_aux/instruction8/window_1410.json": "ef8be1845b4864b75143249686560271aae1b6450b6d4a49a1f53a8c761b4629",
+        "experiments/results/mot20_aux/instruction8/window_2165.json": "47c7b214ed19b037c57f8fddcd30d028783125338b995c5fc5f93531ba017481"
+      }
+    }
+  ],
+  "engine_hashes": {
+    "engine.js": "1ace44ca29815c9ff4be2c22aed6bc25b62fd972ad89b3d8e7065fec56dd0d62",
+    "stage1-engine.js": "e13295bf9b095b1b352305ea8210d774bb7af43b2b31b78b40b5376152250b70",
+    "pressure-field.js": "3c28c6cf740676ad674c519a683fd863c566fbb579fbae12cde25ab28972b7f8",
+    "stadium-macro-engine.js": "e0d0c77557038150cbda809fab01364f66ccf5f904eb6116d9aac1aa80486da7"
+  }
+}

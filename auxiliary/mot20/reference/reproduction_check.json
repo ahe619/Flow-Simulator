@@ -1,0 +1,92 @@
+{
+  "node_version": "v24.19.0",
+  "completed_at": "2026-10-17T00:09:14.822Z",
+  "valid_windows": 4,
+  "person_windows": 385,
+  "unique_identities": 346,
+  "exact_frame_and_score_comparisons": 16,
+  "exact_frame_and_score_parity": true,
+  "summary_csv_byte_identical": true,
+  "aggregate_csv_byte_identical": true,
+  "aggregate": {
+    "cv_2s": {
+      "equalWindow": {
+        "ade": 0.6149975646937352,
+        "fde": 1.2262920374720188,
+        "adePixels": 17.9382226616122,
+        "fdePixels": 35.271224926688085
+      },
+      "personWindowWeighted": {
+        "ade": 0.6312833970414673,
+        "fde": 1.2598666214612522,
+        "adePixels": 18.394844129646653,
+        "fdePixels": 36.21222676294395
+      }
+    },
+    "agent": {
+      "equalWindow": {
+        "ade": 0.6017755075868951,
+        "fde": 1.189886947218508,
+        "adePixels": 17.556134230749244,
+        "fdePixels": 34.255335892074335
+      },
+      "personWindowWeighted": {
+        "ade": 0.6174339321741057,
+        "fde": 1.222249680948775,
+        "adePixels": 17.996081485550853,
+        "fdePixels": 35.162821124448314
+      }
+    },
+    "agent_stage1": {
+      "equalWindow": {
+        "ade": 0.6017326245522394,
+        "fde": 1.1898069622860947,
+        "adePixels": 17.555068191857348,
+        "fdePixels": 34.25338087018644
+      },
+      "personWindowWeighted": {
+        "ade": 0.6173875768453131,
+        "fde": 1.2221601944652547,
+        "adePixels": 17.994955634671463,
+        "fdePixels": 35.1606508757718
+      }
+    },
+    "cv_1s": {
+      "equalWindow": {
+        "ade": 0.580051692117544,
+        "fde": 1.1683238919084953,
+        "adePixels": 16.1665097411851,
+        "fdePixels": 32.03725322108211
+      },
+      "personWindowWeighted": {
+        "ade": 0.5971892569200081,
+        "fde": 1.203239779983908,
+        "adePixels": 16.603408517286105,
+        "fdePixels": 32.92902643845067
+      }
+    }
+  },
+  "activation_failures": [
+    {
+      "anchor": 504,
+      "fraction": 0.01297029702970297,
+      "target": 0.05
+    },
+    {
+      "anchor": 957,
+      "fraction": 0.024896907216494846,
+      "target": 0.05
+    },
+    {
+      "anchor": 1410,
+      "fraction": 0.03437062937062937,
+      "target": 0.05
+    },
+    {
+      "anchor": 2165,
+      "fraction": 0.03825581395348837,
+      "target": 0.05
+    }
+  ],
+  "runtime_output_saved_in_system_temp": true
+}

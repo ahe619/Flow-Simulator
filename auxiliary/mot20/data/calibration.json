@@ -1,0 +1,1494 @@
+{
+  "createdAt": "2026-10-14T05:54:56.965Z",
+  "status": "Historical-only before rollouts",
+  "windows": [
+    {
+      "anchor": 504,
+      "pressureRho0": 1.5485868492675208,
+      "observedQ75": 1.3047813825665044,
+      "isolatedQ99": 1.5485868492675208,
+      "units": "agents/U^2",
+      "historyIntervalSeconds": [
+        -2,
+        0
+      ],
+      "upperEndpointExcluded": true,
+      "selectionRule": "max(occupancy-weighted Q75 historical grid density, occupancy-weighted Q99 isolated density at the same historical positions)",
+      "weights": "node occupancy; each represented agent contributes total weight 1 per frame",
+      "observedWeightedFractionAboveThreshold": 0.0466149919824845,
+      "isolatedWeightedFractionAboveThreshold": 0.009952936349167222,
+      "positiveExcessNodeSamples": 382,
+      "observedNodeSamples": 35840,
+      "historyAgentSamples": 5006,
+      "frames": [
+        {
+          "frame": 454,
+          "time_s": -2,
+          "agents": 99,
+          "maxNodeDensity_agents_per_U2": 2.2791206316323764,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 455,
+          "time_s": -1.96,
+          "agents": 99,
+          "maxNodeDensity_agents_per_U2": 2.152025613587081,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 456,
+          "time_s": -1.92,
+          "agents": 99,
+          "maxNodeDensity_agents_per_U2": 2.091160829937661,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 457,
+          "time_s": -1.88,
+          "agents": 99,
+          "maxNodeDensity_agents_per_U2": 1.9390509041332518,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 458,
+          "time_s": -1.84,
+          "agents": 99,
+          "maxNodeDensity_agents_per_U2": 1.8643703271149779,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 459,
+          "time_s": -1.8,
+          "agents": 99,
+          "maxNodeDensity_agents_per_U2": 1.8715388777044746,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 460,
+          "time_s": -1.76,
+          "agents": 98,
+          "maxNodeDensity_agents_per_U2": 1.900881284186856,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 461,
+          "time_s": -1.72,
+          "agents": 97,
+          "maxNodeDensity_agents_per_U2": 1.8831135852433274,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 462,
+          "time_s": -1.68,
+          "agents": 98,
+          "maxNodeDensity_agents_per_U2": 1.8778350894588258,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 463,
+          "time_s": -1.64,
+          "agents": 98,
+          "maxNodeDensity_agents_per_U2": 1.798104711179991,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 464,
+          "time_s": -1.6,
+          "agents": 98,
+          "maxNodeDensity_agents_per_U2": 1.741643403593169,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 465,
+          "time_s": -1.56,
+          "agents": 98,
+          "maxNodeDensity_agents_per_U2": 1.666622301027971,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 466,
+          "time_s": -1.52,
+          "agents": 99,
+          "maxNodeDensity_agents_per_U2": 1.6502933987575827,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 467,
+          "time_s": -1.48,
+          "agents": 100,
+          "maxNodeDensity_agents_per_U2": 1.574575559061047,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 468,
+          "time_s": -1.44,
+          "agents": 100,
+          "maxNodeDensity_agents_per_U2": 1.5619223496404337,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 469,
+          "time_s": -1.4,
+          "agents": 100,
+          "maxNodeDensity_agents_per_U2": 1.554297494970526,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 470,
+          "time_s": -1.36,
+          "agents": 100,
+          "maxNodeDensity_agents_per_U2": 1.6674899352013879,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 471,
+          "time_s": -1.32,
+          "agents": 100,
+          "maxNodeDensity_agents_per_U2": 1.7440191728877052,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 472,
+          "time_s": -1.28,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 1.9496136334842,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 473,
+          "time_s": -1.24,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 1.9950435207460921,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 474,
+          "time_s": -1.2,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 1.9894489423383097,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 475,
+          "time_s": -1.16,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 1.9415585103203552,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 476,
+          "time_s": -1.12,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 1.8879528432700385,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 477,
+          "time_s": -1.08,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 1.7696447122085683,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 478,
+          "time_s": -1.04,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 1.7463502178060266,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 479,
+          "time_s": -1,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 1.7816474443046733,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 480,
+          "time_s": -0.96,
+          "agents": 100,
+          "maxNodeDensity_agents_per_U2": 1.7824050775122102,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 481,
+          "time_s": -0.92,
+          "agents": 100,
+          "maxNodeDensity_agents_per_U2": 1.8093398564182346,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 482,
+          "time_s": -0.88,
+          "agents": 99,
+          "maxNodeDensity_agents_per_U2": 1.798925503528804,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 483,
+          "time_s": -0.84,
+          "agents": 99,
+          "maxNodeDensity_agents_per_U2": 1.8157960307063954,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 484,
+          "time_s": -0.8,
+          "agents": 99,
+          "maxNodeDensity_agents_per_U2": 2.0185028657064996,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 485,
+          "time_s": -0.76,
+          "agents": 99,
+          "maxNodeDensity_agents_per_U2": 2.1289999696273454,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 486,
+          "time_s": -0.72,
+          "agents": 99,
+          "maxNodeDensity_agents_per_U2": 2.1472708890089853,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 487,
+          "time_s": -0.68,
+          "agents": 100,
+          "maxNodeDensity_agents_per_U2": 2.162074314004934,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 488,
+          "time_s": -0.64,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 2.122519412163972,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 489,
+          "time_s": -0.6,
+          "agents": 102,
+          "maxNodeDensity_agents_per_U2": 2.112327796325489,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 490,
+          "time_s": -0.56,
+          "agents": 102,
+          "maxNodeDensity_agents_per_U2": 2.0908235345506387,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 491,
+          "time_s": -0.52,
+          "agents": 102,
+          "maxNodeDensity_agents_per_U2": 2.0836949866524104,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 492,
+          "time_s": -0.48,
+          "agents": 102,
+          "maxNodeDensity_agents_per_U2": 1.9266484693568857,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 493,
+          "time_s": -0.44,
+          "agents": 102,
+          "maxNodeDensity_agents_per_U2": 1.9571823647272688,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 494,
+          "time_s": -0.4,
+          "agents": 102,
+          "maxNodeDensity_agents_per_U2": 1.959035737815218,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 495,
+          "time_s": -0.36,
+          "agents": 102,
+          "maxNodeDensity_agents_per_U2": 2.000874258873664,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 496,
+          "time_s": -0.32,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 2.2227864627047973,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 497,
+          "time_s": -0.28,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 2.297845626177183,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 498,
+          "time_s": -0.24,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 2.4719530527824443,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 499,
+          "time_s": -0.2,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 2.586583108751973,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 500,
+          "time_s": -0.16,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 2.5189324682400582,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 501,
+          "time_s": -0.12,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 2.5141500089342355,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 502,
+          "time_s": -0.08,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 2.4269859626890016,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 503,
+          "time_s": -0.04,
+          "agents": 101,
+          "maxNodeDensity_agents_per_U2": 2.4153792306207036,
+          "unsupportedAgents": 0
+        }
+      ],
+      "interpretation": "Same operational Stadium rule, in MOT per-window U; not physical jam density or matching W scale"
+    },
+    {
+      "anchor": 957,
+      "pressureRho0": 1.550174028786442,
+      "observedQ75": 1.2814727384741464,
+      "isolatedQ99": 1.550174028786442,
+      "units": "agents/U^2",
+      "historyIntervalSeconds": [
+        -2,
+        0
+      ],
+      "upperEndpointExcluded": true,
+      "selectionRule": "max(occupancy-weighted Q75 historical grid density, occupancy-weighted Q99 isolated density at the same historical positions)",
+      "weights": "node occupancy; each represented agent contributes total weight 1 per frame",
+      "observedWeightedFractionAboveThreshold": 0.050031220697558006,
+      "isolatedWeightedFractionAboveThreshold": 0.009909939159786002,
+      "positiveExcessNodeSamples": 352,
+      "observedNodeSamples": 33929,
+      "historyAgentSamples": 4579,
+      "frames": [
+        {
+          "frame": 907,
+          "time_s": -2,
+          "agents": 89,
+          "maxNodeDensity_agents_per_U2": 2.4428583203192673,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 908,
+          "time_s": -1.96,
+          "agents": 89,
+          "maxNodeDensity_agents_per_U2": 2.5075974711460125,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 909,
+          "time_s": -1.92,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.4325273081576033,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 910,
+          "time_s": -1.88,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.408075510843101,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 911,
+          "time_s": -1.84,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.394110598866766,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 912,
+          "time_s": -1.8,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.4077966469083067,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 913,
+          "time_s": -1.76,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.2985875394806214,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 914,
+          "time_s": -1.72,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.31029064678268,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 915,
+          "time_s": -1.68,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.219175600222093,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 916,
+          "time_s": -1.64,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.0881498645761245,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 917,
+          "time_s": -1.6,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.190649257658806,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 918,
+          "time_s": -1.56,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.406038261118348,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 919,
+          "time_s": -1.52,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.7027286658508225,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 920,
+          "time_s": -1.48,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.828931251086847,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 921,
+          "time_s": -1.44,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.7693424962801862,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 922,
+          "time_s": -1.4,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.433287755932694,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 923,
+          "time_s": -1.36,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.3751519157585714,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 924,
+          "time_s": -1.32,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.303115183813563,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 925,
+          "time_s": -1.28,
+          "agents": 91,
+          "maxNodeDensity_agents_per_U2": 2.188728981601436,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 926,
+          "time_s": -1.24,
+          "agents": 91,
+          "maxNodeDensity_agents_per_U2": 2.044702692157383,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 927,
+          "time_s": -1.2,
+          "agents": 91,
+          "maxNodeDensity_agents_per_U2": 1.9598023672970775,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 928,
+          "time_s": -1.16,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.091890847213253,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 929,
+          "time_s": -1.12,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.175571390256469,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 930,
+          "time_s": -1.08,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.2673696544321578,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 931,
+          "time_s": -1.04,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.3536790640445555,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 932,
+          "time_s": -1,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.349652437726017,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 933,
+          "time_s": -0.96,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.4087191354720523,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 934,
+          "time_s": -0.92,
+          "agents": 90,
+          "maxNodeDensity_agents_per_U2": 2.387108227588043,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 935,
+          "time_s": -0.88,
+          "agents": 91,
+          "maxNodeDensity_agents_per_U2": 2.4108254671350466,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 936,
+          "time_s": -0.84,
+          "agents": 91,
+          "maxNodeDensity_agents_per_U2": 2.5093772640193883,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 937,
+          "time_s": -0.8,
+          "agents": 91,
+          "maxNodeDensity_agents_per_U2": 2.4547501357855697,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 938,
+          "time_s": -0.76,
+          "agents": 91,
+          "maxNodeDensity_agents_per_U2": 2.3054273127001794,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 939,
+          "time_s": -0.72,
+          "agents": 91,
+          "maxNodeDensity_agents_per_U2": 2.1312859325920352,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 940,
+          "time_s": -0.68,
+          "agents": 91,
+          "maxNodeDensity_agents_per_U2": 1.8900977281298763,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 941,
+          "time_s": -0.64,
+          "agents": 91,
+          "maxNodeDensity_agents_per_U2": 2.1279243599677375,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 942,
+          "time_s": -0.6,
+          "agents": 93,
+          "maxNodeDensity_agents_per_U2": 2.3991863725218256,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 943,
+          "time_s": -0.56,
+          "agents": 93,
+          "maxNodeDensity_agents_per_U2": 2.507015523805281,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 944,
+          "time_s": -0.52,
+          "agents": 93,
+          "maxNodeDensity_agents_per_U2": 2.580182238869734,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 945,
+          "time_s": -0.48,
+          "agents": 93,
+          "maxNodeDensity_agents_per_U2": 2.637605087494096,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 946,
+          "time_s": -0.44,
+          "agents": 93,
+          "maxNodeDensity_agents_per_U2": 2.646723392322411,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 947,
+          "time_s": -0.4,
+          "agents": 94,
+          "maxNodeDensity_agents_per_U2": 2.460633008698155,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 948,
+          "time_s": -0.36,
+          "agents": 94,
+          "maxNodeDensity_agents_per_U2": 2.3813454117443316,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 949,
+          "time_s": -0.32,
+          "agents": 94,
+          "maxNodeDensity_agents_per_U2": 2.2715163249447916,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 950,
+          "time_s": -0.28,
+          "agents": 94,
+          "maxNodeDensity_agents_per_U2": 2.4157201573923928,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 951,
+          "time_s": -0.24,
+          "agents": 95,
+          "maxNodeDensity_agents_per_U2": 2.596279272370802,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 952,
+          "time_s": -0.2,
+          "agents": 97,
+          "maxNodeDensity_agents_per_U2": 2.8537363265650213,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 953,
+          "time_s": -0.16,
+          "agents": 97,
+          "maxNodeDensity_agents_per_U2": 3.0625581311499186,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 954,
+          "time_s": -0.12,
+          "agents": 97,
+          "maxNodeDensity_agents_per_U2": 3.0422462392766736,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 955,
+          "time_s": -0.08,
+          "agents": 97,
+          "maxNodeDensity_agents_per_U2": 3.1108892713635146,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 956,
+          "time_s": -0.04,
+          "agents": 97,
+          "maxNodeDensity_agents_per_U2": 2.931832420436021,
+          "unsupportedAgents": 0
+        }
+      ],
+      "interpretation": "Same operational Stadium rule, in MOT per-window U; not physical jam density or matching W scale"
+    },
+    {
+      "anchor": 1410,
+      "pressureRho0": 1.5519275762782851,
+      "observedQ75": 1.3488965354842235,
+      "isolatedQ99": 1.5519275762782851,
+      "units": "agents/U^2",
+      "historyIntervalSeconds": [
+        -2,
+        0
+      ],
+      "upperEndpointExcluded": true,
+      "selectionRule": "max(occupancy-weighted Q75 historical grid density, occupancy-weighted Q99 isolated density at the same historical positions)",
+      "weights": "node occupancy; each represented agent contributes total weight 1 per frame",
+      "observedWeightedFractionAboveThreshold": 0.077267725343434,
+      "isolatedWeightedFractionAboveThreshold": 0.009945335504040125,
+      "positiveExcessNodeSamples": 782,
+      "observedNodeSamples": 47155,
+      "historyAgentSamples": 6876,
+      "frames": [
+        {
+          "frame": 1360,
+          "time_s": -2,
+          "agents": 130,
+          "maxNodeDensity_agents_per_U2": 2.4164088110285555,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1361,
+          "time_s": -1.96,
+          "agents": 130,
+          "maxNodeDensity_agents_per_U2": 2.7170770702460305,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1362,
+          "time_s": -1.92,
+          "agents": 130,
+          "maxNodeDensity_agents_per_U2": 2.8328170838687736,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1363,
+          "time_s": -1.88,
+          "agents": 130,
+          "maxNodeDensity_agents_per_U2": 2.923897280877815,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1364,
+          "time_s": -1.84,
+          "agents": 130,
+          "maxNodeDensity_agents_per_U2": 2.859753992148972,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1365,
+          "time_s": -1.8,
+          "agents": 130,
+          "maxNodeDensity_agents_per_U2": 2.7599728028899824,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1366,
+          "time_s": -1.76,
+          "agents": 131,
+          "maxNodeDensity_agents_per_U2": 2.7155112054274415,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1367,
+          "time_s": -1.72,
+          "agents": 131,
+          "maxNodeDensity_agents_per_U2": 2.7610209978188283,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1368,
+          "time_s": -1.68,
+          "agents": 133,
+          "maxNodeDensity_agents_per_U2": 2.9320328665775426,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1369,
+          "time_s": -1.64,
+          "agents": 133,
+          "maxNodeDensity_agents_per_U2": 2.8422078222126177,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1370,
+          "time_s": -1.6,
+          "agents": 133,
+          "maxNodeDensity_agents_per_U2": 2.823511219265782,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1371,
+          "time_s": -1.56,
+          "agents": 135,
+          "maxNodeDensity_agents_per_U2": 2.7588818140548406,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1372,
+          "time_s": -1.52,
+          "agents": 135,
+          "maxNodeDensity_agents_per_U2": 2.744801387575945,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1373,
+          "time_s": -1.48,
+          "agents": 136,
+          "maxNodeDensity_agents_per_U2": 3.2744685210360203,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1374,
+          "time_s": -1.44,
+          "agents": 136,
+          "maxNodeDensity_agents_per_U2": 3.0834076874433305,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1375,
+          "time_s": -1.4,
+          "agents": 136,
+          "maxNodeDensity_agents_per_U2": 2.8083153639503906,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1376,
+          "time_s": -1.36,
+          "agents": 136,
+          "maxNodeDensity_agents_per_U2": 2.6653936586329317,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1377,
+          "time_s": -1.32,
+          "agents": 136,
+          "maxNodeDensity_agents_per_U2": 2.565627958236282,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1378,
+          "time_s": -1.28,
+          "agents": 136,
+          "maxNodeDensity_agents_per_U2": 2.5106556300269234,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1379,
+          "time_s": -1.24,
+          "agents": 138,
+          "maxNodeDensity_agents_per_U2": 2.467723563711015,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1380,
+          "time_s": -1.2,
+          "agents": 138,
+          "maxNodeDensity_agents_per_U2": 2.3703348296659366,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1381,
+          "time_s": -1.16,
+          "agents": 138,
+          "maxNodeDensity_agents_per_U2": 2.2498848247165473,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1382,
+          "time_s": -1.12,
+          "agents": 138,
+          "maxNodeDensity_agents_per_U2": 2.2622654429555875,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1383,
+          "time_s": -1.08,
+          "agents": 138,
+          "maxNodeDensity_agents_per_U2": 2.277845321435874,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1384,
+          "time_s": -1.04,
+          "agents": 139,
+          "maxNodeDensity_agents_per_U2": 2.352685462589102,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1385,
+          "time_s": -1,
+          "agents": 139,
+          "maxNodeDensity_agents_per_U2": 2.3230280340561835,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1386,
+          "time_s": -0.96,
+          "agents": 138,
+          "maxNodeDensity_agents_per_U2": 2.42726276558006,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1387,
+          "time_s": -0.92,
+          "agents": 139,
+          "maxNodeDensity_agents_per_U2": 2.4236037205405374,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1388,
+          "time_s": -0.88,
+          "agents": 139,
+          "maxNodeDensity_agents_per_U2": 2.429561497052456,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1389,
+          "time_s": -0.84,
+          "agents": 138,
+          "maxNodeDensity_agents_per_U2": 2.4673000122528834,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1390,
+          "time_s": -0.8,
+          "agents": 139,
+          "maxNodeDensity_agents_per_U2": 2.4415247839572807,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1391,
+          "time_s": -0.76,
+          "agents": 137,
+          "maxNodeDensity_agents_per_U2": 2.5354599146205175,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1392,
+          "time_s": -0.72,
+          "agents": 137,
+          "maxNodeDensity_agents_per_U2": 2.8534955008671363,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1393,
+          "time_s": -0.68,
+          "agents": 137,
+          "maxNodeDensity_agents_per_U2": 3.052233241140345,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1394,
+          "time_s": -0.64,
+          "agents": 139,
+          "maxNodeDensity_agents_per_U2": 3.213615299681923,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1395,
+          "time_s": -0.6,
+          "agents": 141,
+          "maxNodeDensity_agents_per_U2": 3.657387005188086,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1396,
+          "time_s": -0.56,
+          "agents": 141,
+          "maxNodeDensity_agents_per_U2": 3.6493249935753895,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1397,
+          "time_s": -0.52,
+          "agents": 143,
+          "maxNodeDensity_agents_per_U2": 3.629845872960609,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1398,
+          "time_s": -0.48,
+          "agents": 143,
+          "maxNodeDensity_agents_per_U2": 3.5431709301417222,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1399,
+          "time_s": -0.44,
+          "agents": 143,
+          "maxNodeDensity_agents_per_U2": 3.468806782081978,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1400,
+          "time_s": -0.4,
+          "agents": 143,
+          "maxNodeDensity_agents_per_U2": 3.5188651964013724,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1401,
+          "time_s": -0.36,
+          "agents": 142,
+          "maxNodeDensity_agents_per_U2": 3.4274688405929616,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1402,
+          "time_s": -0.32,
+          "agents": 143,
+          "maxNodeDensity_agents_per_U2": 3.3320313502069827,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1403,
+          "time_s": -0.28,
+          "agents": 143,
+          "maxNodeDensity_agents_per_U2": 3.2597583732061195,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1404,
+          "time_s": -0.24,
+          "agents": 143,
+          "maxNodeDensity_agents_per_U2": 3.211774825776039,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1405,
+          "time_s": -0.2,
+          "agents": 143,
+          "maxNodeDensity_agents_per_U2": 3.1625519929221593,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1406,
+          "time_s": -0.16,
+          "agents": 142,
+          "maxNodeDensity_agents_per_U2": 3.112216054810374,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1407,
+          "time_s": -0.12,
+          "agents": 142,
+          "maxNodeDensity_agents_per_U2": 3.233832885262776,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1408,
+          "time_s": -0.08,
+          "agents": 143,
+          "maxNodeDensity_agents_per_U2": 3.3005739416085214,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 1409,
+          "time_s": -0.04,
+          "agents": 143,
+          "maxNodeDensity_agents_per_U2": 3.289167283178454,
+          "unsupportedAgents": 0
+        }
+      ],
+      "interpretation": "Same operational Stadium rule, in MOT per-window U; not physical jam density or matching W scale"
+    },
+    {
+      "anchor": 2165,
+      "pressureRho0": 1.5492242285599145,
+      "observedQ75": 1.324407936369233,
+      "isolatedQ99": 1.5492242285599145,
+      "units": "agents/U^2",
+      "historyIntervalSeconds": [
+        -2,
+        0
+      ],
+      "upperEndpointExcluded": true,
+      "selectionRule": "max(occupancy-weighted Q75 historical grid density, occupancy-weighted Q99 isolated density at the same historical positions)",
+      "weights": "node occupancy; each represented agent contributes total weight 1 per frame",
+      "observedWeightedFractionAboveThreshold": 0.07139462759650735,
+      "isolatedWeightedFractionAboveThreshold": 0.009962625717387852,
+      "positiveExcessNodeSamples": 908,
+      "observedNodeSamples": 57922,
+      "historyAgentSamples": 8434,
+      "frames": [
+        {
+          "frame": 2115,
+          "time_s": -2,
+          "agents": 165,
+          "maxNodeDensity_agents_per_U2": 2.206910401077922,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2116,
+          "time_s": -1.96,
+          "agents": 165,
+          "maxNodeDensity_agents_per_U2": 2.147044688110105,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2117,
+          "time_s": -1.92,
+          "agents": 164,
+          "maxNodeDensity_agents_per_U2": 2.2041614287100746,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2118,
+          "time_s": -1.88,
+          "agents": 164,
+          "maxNodeDensity_agents_per_U2": 2.3817520588078525,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2119,
+          "time_s": -1.84,
+          "agents": 164,
+          "maxNodeDensity_agents_per_U2": 2.377613948023857,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2120,
+          "time_s": -1.8,
+          "agents": 164,
+          "maxNodeDensity_agents_per_U2": 2.394965212789885,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2121,
+          "time_s": -1.76,
+          "agents": 165,
+          "maxNodeDensity_agents_per_U2": 2.444344883742218,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2122,
+          "time_s": -1.72,
+          "agents": 165,
+          "maxNodeDensity_agents_per_U2": 2.2935709364018186,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2123,
+          "time_s": -1.68,
+          "agents": 164,
+          "maxNodeDensity_agents_per_U2": 2.1366741146926023,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2124,
+          "time_s": -1.64,
+          "agents": 165,
+          "maxNodeDensity_agents_per_U2": 2.2463449608445454,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2125,
+          "time_s": -1.6,
+          "agents": 166,
+          "maxNodeDensity_agents_per_U2": 2.184040245535729,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2126,
+          "time_s": -1.56,
+          "agents": 166,
+          "maxNodeDensity_agents_per_U2": 2.2364757094490635,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2127,
+          "time_s": -1.52,
+          "agents": 169,
+          "maxNodeDensity_agents_per_U2": 2.4259354762694936,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2128,
+          "time_s": -1.48,
+          "agents": 169,
+          "maxNodeDensity_agents_per_U2": 2.623887449092811,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2129,
+          "time_s": -1.44,
+          "agents": 169,
+          "maxNodeDensity_agents_per_U2": 2.7058314555407237,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2130,
+          "time_s": -1.4,
+          "agents": 167,
+          "maxNodeDensity_agents_per_U2": 2.5819319045106197,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2131,
+          "time_s": -1.36,
+          "agents": 166,
+          "maxNodeDensity_agents_per_U2": 2.620989571252706,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2132,
+          "time_s": -1.32,
+          "agents": 165,
+          "maxNodeDensity_agents_per_U2": 2.6088058918442445,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2133,
+          "time_s": -1.28,
+          "agents": 165,
+          "maxNodeDensity_agents_per_U2": 2.5579361249041446,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2134,
+          "time_s": -1.24,
+          "agents": 165,
+          "maxNodeDensity_agents_per_U2": 2.6498570487354134,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2135,
+          "time_s": -1.2,
+          "agents": 165,
+          "maxNodeDensity_agents_per_U2": 2.7770254395074483,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2136,
+          "time_s": -1.16,
+          "agents": 169,
+          "maxNodeDensity_agents_per_U2": 2.8625811749292835,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2137,
+          "time_s": -1.12,
+          "agents": 169,
+          "maxNodeDensity_agents_per_U2": 2.874345683722114,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2138,
+          "time_s": -1.08,
+          "agents": 170,
+          "maxNodeDensity_agents_per_U2": 2.863832628359373,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2139,
+          "time_s": -1.04,
+          "agents": 171,
+          "maxNodeDensity_agents_per_U2": 2.820651689019834,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2140,
+          "time_s": -1,
+          "agents": 172,
+          "maxNodeDensity_agents_per_U2": 2.8442044536987097,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2141,
+          "time_s": -0.96,
+          "agents": 172,
+          "maxNodeDensity_agents_per_U2": 2.995795367417082,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2142,
+          "time_s": -0.92,
+          "agents": 169,
+          "maxNodeDensity_agents_per_U2": 3.051064802502003,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2143,
+          "time_s": -0.88,
+          "agents": 169,
+          "maxNodeDensity_agents_per_U2": 2.969308465732613,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2144,
+          "time_s": -0.84,
+          "agents": 169,
+          "maxNodeDensity_agents_per_U2": 2.724747454237512,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2145,
+          "time_s": -0.8,
+          "agents": 168,
+          "maxNodeDensity_agents_per_U2": 2.4824205380063566,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2146,
+          "time_s": -0.76,
+          "agents": 169,
+          "maxNodeDensity_agents_per_U2": 2.3377994469563412,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2147,
+          "time_s": -0.72,
+          "agents": 170,
+          "maxNodeDensity_agents_per_U2": 2.186105566569564,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2148,
+          "time_s": -0.68,
+          "agents": 171,
+          "maxNodeDensity_agents_per_U2": 2.469519734031873,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2149,
+          "time_s": -0.64,
+          "agents": 171,
+          "maxNodeDensity_agents_per_U2": 2.1839931869377796,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2150,
+          "time_s": -0.6,
+          "agents": 172,
+          "maxNodeDensity_agents_per_U2": 2.1662882163773483,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2151,
+          "time_s": -0.56,
+          "agents": 172,
+          "maxNodeDensity_agents_per_U2": 2.096765916058879,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2152,
+          "time_s": -0.52,
+          "agents": 172,
+          "maxNodeDensity_agents_per_U2": 2.347379995452611,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2153,
+          "time_s": -0.48,
+          "agents": 172,
+          "maxNodeDensity_agents_per_U2": 2.6855971633613516,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2154,
+          "time_s": -0.44,
+          "agents": 172,
+          "maxNodeDensity_agents_per_U2": 2.7361812302624253,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2155,
+          "time_s": -0.4,
+          "agents": 173,
+          "maxNodeDensity_agents_per_U2": 3.2184247435681472,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2156,
+          "time_s": -0.36,
+          "agents": 171,
+          "maxNodeDensity_agents_per_U2": 3.207154781249015,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2157,
+          "time_s": -0.32,
+          "agents": 171,
+          "maxNodeDensity_agents_per_U2": 3.11269373218716,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2158,
+          "time_s": -0.28,
+          "agents": 172,
+          "maxNodeDensity_agents_per_U2": 3.018260038552047,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2159,
+          "time_s": -0.24,
+          "agents": 171,
+          "maxNodeDensity_agents_per_U2": 2.9385660370256454,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2160,
+          "time_s": -0.2,
+          "agents": 172,
+          "maxNodeDensity_agents_per_U2": 2.8061115094672,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2161,
+          "time_s": -0.16,
+          "agents": 172,
+          "maxNodeDensity_agents_per_U2": 2.6523376449863756,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2162,
+          "time_s": -0.12,
+          "agents": 172,
+          "maxNodeDensity_agents_per_U2": 2.500813632501142,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2163,
+          "time_s": -0.08,
+          "agents": 172,
+          "maxNodeDensity_agents_per_U2": 2.33570540989235,
+          "unsupportedAgents": 0
+        },
+        {
+          "frame": 2164,
+          "time_s": -0.04,
+          "agents": 172,
+          "maxNodeDensity_agents_per_U2": 2.207789960298864,
+          "unsupportedAgents": 0
+        }
+      ],
+      "interpretation": "Same operational Stadium rule, in MOT per-window U; not physical jam density or matching W scale"
+    }
+  ]
+}
